@@ -1,7 +1,7 @@
 #include "BallItem.h"
 #include "GameState.h"
 #include "Hero.h"
-#include "JvH.h"
+#include "JvGame/JvH.h"
 #include "GamePad.h"
 
 BallItem::BallItem(double X,double Y) : JvSprite(X,Y)

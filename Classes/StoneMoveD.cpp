@@ -1,5 +1,5 @@
 #include "StoneMoveD.h"
-#include "JvH.h"
+#include "JvGame/JvH.h"
 
 StoneMoveD::StoneMoveD(double X,double Y) : Stone(X,Y)
 {

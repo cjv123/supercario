@@ -1,7 +1,7 @@
 #ifndef _COIN_H
 #define _COIN_H
 
-#include "JvSprite.h"
+#include "JvGame/JvSprite.h"
 class JvEmitter;
 
 class Coin : public JvSprite

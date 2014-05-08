@@ -1,14 +1,14 @@
 #include "Hero.h"
-#include "JvH.h"
+#include "JvGame/JvH.h"
 #include "GameState.h"
 #include "GamePad.h"
 
 
 Hero::Hero(double X,double Y) : JvSprite(X,Y)
 {
-	_jumpPower=200*2;
-	_gv=400*2;
-	_moveSpeed=100*2;
+	_jumpPower=200;
+	_gv=400;
+	_moveSpeed=100;
 	_statusModel="man";
 	_hitWall=false;
 	_changeTimer=0;
@@ -490,8 +490,8 @@ void Hero::changeToMan()
 	dieframes.push_back(10);
 	addAnimation("die",dieframes,8);
 
-	y-=31*2-16*2;
-	width=16*2;
+	y-=31-16;
+	width=16;
 
 	GameState::gamePad->walkMode();
 }
@@ -515,8 +515,8 @@ void Hero::changeToBall()
 	addAnimation("jump_up_b",moveframes,16);
 	addAnimation("jump_down_b",moveframes,16);
 
-	y+=31*2-16*2;
-	width=16*2-1;
+	y+=31-16;
+	width=16-1;
 }
 
 bool Hero::isCanBall()

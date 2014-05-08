@@ -1,7 +1,7 @@
 #ifndef _HOMESTATE_H
 #define _HOMESTATE_H
 
-#include "JvState.h"
+#include "JvGame/JvState.h"
 class JvSprite;
 class JvGroup;
 

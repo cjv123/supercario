@@ -1,7 +1,7 @@
 #ifndef _SELECTSTATE_H
 #define _SELECTSTATE_H
 
-#include "JvState.h"
+#include "JvGame/JvState.h"
 
 class SelectState : public JvState
 {

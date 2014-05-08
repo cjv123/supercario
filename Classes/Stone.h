@@ -1,7 +1,7 @@
 #ifndef _STONE_H
 #define _STONE_H
 
-#include "JvSprite.h"
+#include "JvGame/JvSprite.h"
 
 class JvEmitter;
 

@@ -1,6 +1,5 @@
-#pragma warning(disable:4786)
 #include "Enemy.h"
-#include "JvH.h"
+#include "JvGame/JvH.h"
 #include "GameState.h"
 #include "Hero.h"
 

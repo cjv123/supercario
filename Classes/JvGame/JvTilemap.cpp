@@ -1,6 +1,6 @@
 #include "JvTilemap.h"
 #include "JvState.h"
-#include "JvSprite.h"
+#include "JvState.h"
 #include <string>
 using namespace std;
 
@@ -38,7 +38,8 @@ JvTilemap::~JvTilemap()
 
 	for (int i=0;i<_drawBuf.size();i++)
 	{
-		_drawBuf[i]->release();
+		if(_drawBuf[i])
+			_drawBuf[i]->release();
 	}
 }
 

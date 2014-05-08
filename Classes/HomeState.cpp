@@ -1,8 +1,8 @@
-#include "JvH.h"
 #include "HomeState.h"
 #include "GameState.h"
 #include "SelectState.h"
 #include "CreateState.h"
+#include "JvGame/JvH.h"
 
 void start_game_callback(int par)
 {

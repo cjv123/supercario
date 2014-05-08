@@ -1,7 +1,7 @@
 #ifndef _JVTEXT_H
 #define _JVTEXT_H
 
-#include "JvSprite.h"
+#include "JvState.h"
 #include <string>
 using namespace std;
 

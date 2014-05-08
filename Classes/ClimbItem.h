@@ -1,7 +1,7 @@
 #ifndef _CLIMBITEM
 #define _CLIMBITEM
 
-#include "JvSprite.h"
+#include "JvGame/JvSprite.h"
 
 class ClimbItem : public JvSprite
 {

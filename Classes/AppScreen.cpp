@@ -1,5 +1,5 @@
 #include "AppScreen.h"
-#include "JvH.h"
+#include "JvGame/JvH.h"
 #include "LogoState.h"
 
 static JvGame jvgame;

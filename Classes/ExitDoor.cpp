@@ -1,5 +1,5 @@
 #include "ExitDoor.h"
-#include "JvH.h"
+#include "JvGame/JvH.h"
 #include "GameState.h"
 #include "Hero.h"
 #include "PassState.h"

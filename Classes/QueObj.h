@@ -1,7 +1,7 @@
 #ifndef _QUEOBJ_H
 #define _QUEOBJ_H
 
-#include "JvSprite.h"
+#include "JvGame/JvSprite.h"
 class JvTextPad;
 
 class QueObj : public JvSprite

@@ -1,4 +1,4 @@
-#include "JvH.h"
+#include "JvGame/JvH.h"
 #include "PassState.h"
 #include "GameState.h"
 #include "SelectState.h"
@@ -26,9 +26,9 @@ void PassState::create()
 	bg->loadGraphic("bg.png");
 	add(bg);
 
-	JvTilemap* map = new JvTilemap;
-	map->loadMap("pass.csv","map.png",16,16);
-	add(map);
+// 	JvTilemap* map = new JvTilemap;
+// 	map->loadMap("pass.csv","map.png",16,16);
+// 	add(map);
 
 	hero = new JvSprite(226,130);
 	hero->loadGraphic("hero.png",true,false,16,31);
@@ -55,7 +55,7 @@ void PassState::create()
 	
 	nextButton = new JvButton(JvG::width/2-spb->width/2,80,spb->width,spb->height);
 	nextButton->loadGraphic(spb,spbH);
-	nextButton->setTitle("NEXT LEVEL",FONT_NAME,37,15,20);
+	nextButton->setTitle("NEXT LEVEL",FONT_NAME,0,0,12);
 	
 	spb = new JvSprite(0,0);
 	spbH = new JvSprite(0,0);
@@ -64,7 +64,7 @@ void PassState::create()
 
 	exitButton = new JvButton(JvG::width/2-spb->width/2,145,spb->width,spb->height);
 	exitButton ->loadGraphic(spb,spbH);
-	exitButton->setTitle("MAIN MENU",FONT_NAME,40,15,20);
+	exitButton->setTitle("MAIN MENU",FONT_NAME,0,0,12);
 
 	nextButton->setCallback(NextButton_callback_ps);
 	exitButton->setCallback(Exit_callback_ps);
@@ -73,7 +73,8 @@ void PassState::create()
 	bBg->createRect(0,0,JvG::width,JvG::height,MAKE_RGBA_8888(0,0,0,128));
 	add(bBg);
 
-	gameoverTile = new JvText(JvG::width/2-13*20/2,30,300,30,FONT_NAME,"Level Complete");
+	gameoverTile = new JvText(0,30,300,30,FONT_NAME,"Level Complete");
+	gameoverTile->x = JvG::width/2 - gameoverTile->width/2;
 	gameoverTile->setSize(20);
 	gameoverTile->setColor(MAKE_RGBA_8888(255,0,0,255));
 	gameoverTile->scrollFactor.x =0;

@@ -1,4 +1,4 @@
-#include "JvH.h"
+#include "JvGame/JvH.h"
 #include "SelectState.h"
 #include "GameState.h"
 #include "StartState.h"
@@ -78,7 +78,7 @@ void SelectState::create()
 	JvSprite* title  = new JvSprite;
 	title->loadGraphic("sel_title_en.png");
 	title->x = JvG::width/2 - title->width/2;
-	title->y = 10;
+	title->y = 35;
 	add(title);
 	
 	JvButton* lvButton;
@@ -92,6 +92,7 @@ void SelectState::create()
 	JvText* txt = NULL;
 	i=0;
 	char str[5];
+	int interval = 10;
 	for (;i<28;i++)
 	{
 		col = i % 7;
@@ -105,9 +106,9 @@ void SelectState::create()
 			bImgSp = new JvSprite(0,0,bImg);
 			bHighImgSp =new JvSprite(0,0,bHighImg);
 			lvButton = new JvButton(0,0,bImgSp->width,bHighImgSp->height);
-			int tarx = JvG::width/2-7*(int)lvButton->width/2;
-			lvButton->x = col * (lvButton->width)+tarx;
-			lvButton->y = row * (lvButton->height)+47;
+			int tarx = JvG::width/2-7*((int)lvButton->width+interval)/2;
+			lvButton->x = col * (lvButton->width+interval)+tarx;
+			lvButton->y = row * (lvButton->height+interval)+100;
 			lvButton->loadGraphic(bImgSp,bHighImgSp);
 			add(lvButton);
 			lvButton->setCallback(selectLvButton,NULL,i+1);
@@ -115,27 +116,22 @@ void SelectState::create()
 			if (GameState::gameData.level[i]==LVOPEN)
 			{
 				sprintf(str,"%d",i+1);
-				int txtX = col*lvButton->width+tarx+15;
-				if (i+1<10)
-				{
-					txtX = col*lvButton->width+tarx+15+10;
-				}
-				txt = new JvText(txtX,row*lvButton->height+47+20,lvButton->width,
+				txt = new JvText(lvButton->x,lvButton->y,lvButton->width,
 					lvButton->height,FONT_NAME,str);
-				txt->setSize(20);
+				txt->setSize(16);
 				add(txt);
 			}
 			else
 			{
-				txt = new JvText(col*lvButton->width+tarx+11,row*lvButton->height+47+21,lvButton->width,
+				txt = new JvText(lvButton->x,lvButton->y,lvButton->width,
 					lvButton->height,FONT_NAME,"Pass");
-				txt->setSize(12);
+				txt->setSize(8);
 				//txt->setColor(MAKE_RGBA_8888(255,0,0,255));
 				add(txt);
 
 				if (GameState::gameData.level[i]==STARPASS)
 				{
-					JvSprite* star = new JvSprite(col*lvButton->width+tarx+41,row*lvButton->height+47+40);
+					JvSprite* star = new JvSprite(lvButton->x+20,lvButton->y+20);
 					star->loadGraphic("object_tile.png",true,false,16,16);
 					vector<int> staranim;
 					staranim.push_back(11);
@@ -149,8 +145,8 @@ void SelectState::create()
 		else if(GameState::gameData.level[i]==LVLOCK)
 		{
 			bImgSp = new JvSprite(0,0,bLockImg);
-			bImgSp->x = col * (lvButton->width)+JvG::width/2-7*(int)lvButton->width/2;
-			bImgSp->y = row * (lvButton->height)+47;
+			bImgSp->x = col * (lvButton->width+interval)+JvG::width/2-7*((int)lvButton->width+interval)/2;
+			bImgSp->y = row * (lvButton->height+interval)+100;
 			add(bImgSp);
 		}
 	}

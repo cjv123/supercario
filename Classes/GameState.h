@@ -1,12 +1,12 @@
 #ifndef _GAMESTATE_H
 #define _GAMESTATE_H
 
-#include "JvState.h"
+#include "JvGame/JvState.h"
 
 #ifdef WIN32
 #define FONT_NAME "Nokia Cellphone FC"
 #else
-#define FONT_NAME FONT_NAME
+#define FONT_NAME "nokiafc22.ttf"
 #endif
 
 enum{LVLOCK=0,LVOPEN=1,LVPASS=2,STARPASS=3};

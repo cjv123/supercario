@@ -1,7 +1,7 @@
 #ifndef _STABL_H
 #define _STABL_H
 
-#include "JvSprite.h"
+#include "JvGame/JvSprite.h"
 
 class StabL : public JvSprite
 {

@@ -1,7 +1,7 @@
 #ifndef _PASSSTATE_H
 #define _PASSSTATE_H
 
-#include "JvState.h"
+#include "JvGame/JvState.h"
 class JvSprite;
 class JvText;
 class JvButton;

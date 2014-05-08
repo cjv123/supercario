@@ -1,7 +1,7 @@
 #ifndef _ENEMY_H
 #define _ENEMY_H
 
-#include "JvSprite.h"
+#include "JvGame/JvSprite.h"
 
 class JvEmitter;
 

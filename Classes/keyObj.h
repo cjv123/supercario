@@ -1,7 +1,7 @@
 #ifndef _KEYOBJ_H
 #define _KEYOBJ_H
 
-#include "JvSprite.h"
+#include "JvGame/JvSprite.h"
 
 class JvEmitter;
 

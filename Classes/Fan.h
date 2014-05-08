@@ -1,7 +1,7 @@
 #ifndef _FAN_H
 #define _FAN_H
 
-#include "JvSprite.h"
+#include "JvGame/JvSprite.h"
 
 class Fan : public JvSprite
 {

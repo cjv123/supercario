@@ -50,8 +50,9 @@ JvEmitter* JvEmitter::createSprites(CCSprite* Graphics,unsigned int Quantity/* =
 	{
 		sP = new JvSprite();
 		sP->angle = BakedRotations;
-		sP->loadGraphic(Graphics,true,false,Graphics->getContentSize().width,Graphics->getContentSize().height);
-		
+		sP->loadGraphic(Graphics,true,false,Graphics->getContentSize().height,Graphics->getContentSize().height);
+		sP->getPixels()->setAnchorPoint(ccp(0.5,0.5));
+
 		if(Multiple)
 		{
 			r = JvU::random()*tf;

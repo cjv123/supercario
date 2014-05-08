@@ -1,6 +1,6 @@
-#include "JvH.h"
 #include "StartState.h"
 #include "GameState.h"
+#include "JvGame/JvH.h"
 
 StartState::StartState()
 {
@@ -20,17 +20,20 @@ void StartState::create()
 	_ui = new JvSprite(-87,150);
 	_ui->loadGraphic("start.png");
 	_ui->x = JvG::width/2 - _ui->width/2;
+	_ui->y = JvG::height;
 	add(_ui);
 	
 	char lvstr[10];
 	sprintf(lvstr,"Level%d",GameState::nowLv);
-	_txt = new JvText(JvG::width/2 - 6*20/2,335,200,30,FONT_NAME,lvstr);
+	_txt = new JvText(0,0,200,30,FONT_NAME,lvstr);
+	_txt->x = JvG::width/2 - _txt->width/2;
+	_txt->y = _ui->y+90;
 	_txt->setColor(MAKE_RGBA_8888(255,0,0,255));
 	_txt->setSize(20);
 	add(_txt);
 	
-	_ui->velocity.y = -80;
-	_txt->velocity.y = -80;
+	_ui->velocity.y = -160;
+	_txt->velocity.y = -160;
 
 	JvG::stopMusic();
 }
@@ -41,11 +44,11 @@ void StartState::update()
 			_ui->width,_ui->height);
 	if (_ui->y>0 && JvG::joystick.isMouseDown(rect))
 	{
-		_ui->y=-70;
-		_txt->y=235-120;
+		_ui->y=0;
+		_txt->y=90;
 	}
 
-	if (_ui->y<=-70)
+	if (_ui->y<=0)
 	{
 		_ui->velocity.y=0;
 		_txt->velocity.y=0;

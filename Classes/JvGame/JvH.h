@@ -1,4 +1,3 @@
-#pragma warning(disable:4786)
 #ifndef _JVH_H
 #define _JVH_H
 
@@ -25,4 +24,3 @@
 
 
 #endif
-#pragma warning(disable:4786)

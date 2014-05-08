@@ -1,6 +1,5 @@
-#pragma warning(disable:4786)
 #include "QueObj.h"
-#include "JvH.h"
+#include "JvGame/JvH.h"
 #include "GameState.h"
 
 QueObj::QueObj(double X,double Y,JvTextPad* Text,JvSprite* Item) : JvSprite(X,Y)

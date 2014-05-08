@@ -1,5 +1,5 @@
 #include "keyObj.h"
-#include "JvH.h"
+#include "JvGame/JvH.h"
 #include "Hero.h"
 #include "GameState.h"
 

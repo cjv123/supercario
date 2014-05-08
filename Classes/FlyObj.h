@@ -1,7 +1,7 @@
 #ifndef _FLYOBJ_H
 #define _FLYOBJ_H
 
-#include "JvSprite.h"
+#include "JvGame/JvSprite.h"
 
 class FlyObj : public JvSprite
 {

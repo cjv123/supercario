@@ -1,7 +1,7 @@
 #ifndef _GAMEPAD_H
 #define _GAMEPAD_H
 
-#include "JvGroup.h"
+#include "JvGame/JvGroup.h"
 
 class JvButton;
 

@@ -1,4 +1,3 @@
-#include "JvH.h"
 #include "GameState.h"
 #include "SelectState.h"
 #include "Hero.h"
@@ -23,9 +22,10 @@
 #include "HomeState.h"
 #include "Coin.h"
 #include "QueObj.h"
+#include "JvGame/JvH.h"
 
-#include "tinystr.h"
-#include "tinyxml.h"
+#include "tinyxml2.h"
+using namespace tinyxml2;
 
 Hero* GameState::heroP = NULL;
 int GameState::nowLv = 1;
@@ -155,12 +155,11 @@ void GameState::create()
 	
 	char xmlfilename[20];
 	sprintf(xmlfilename,"Level_lv%d.xml",GameState::nowLv);
-	TiXmlDocument doc(xmlfilename);
-	doc.LoadFile();
-
-	TiXmlElement* rootElement = doc.RootElement();
+	tinyxml2::XMLDocument doc;
+	doc.LoadFile(xmlfilename);
+	XMLElement* rootElement = doc.RootElement();
 	
-	TiXmlNode* NodeP = rootElement->FirstChildElement("objects");
+	XMLNode* NodeP = rootElement->FirstChildElement("objects");
 	if (NodeP)
 	{
 		NodeP = NodeP->FirstChildElement();
@@ -169,7 +168,7 @@ void GameState::create()
 	for (;NodeP;NodeP=NodeP->NextSiblingElement())
 	{
 		string classname = NodeP->Value();
-		TiXmlElement* elemet = NodeP->ToElement();
+		XMLElement* elemet = NodeP->ToElement();
 		string xstr=elemet->Attribute("x");
 		string ystr=elemet->Attribute("y");
 		double x = atof(xstr.c_str());
@@ -375,7 +374,7 @@ void GameState::create()
 	int by = JvG::height/2 - spb->height/2;
 	resButton = new JvButton(0,by,spb->width,spb->height);
 	resButton->loadGraphic(spb,spbH);
-	resButton->setTitle("RESTART",FONT_NAME,0,0,20);
+	resButton->setTitle("RESTART",FONT_NAME,0,0,12);
 	nextButton = new JvButton(100,by+100,spb->width,spb->height);
 	spb = new JvSprite(0,0,bimg);
 	spbH = new JvSprite(0,0,bimgh);
@@ -385,13 +384,13 @@ void GameState::create()
 	spb = new JvSprite(0,0,bimg);
 	spbH = new JvSprite(0,0,bimgh);
 	exitButton->loadGraphic(spb,spbH);
-	exitButton->setTitle("MAIN MENU",FONT_NAME,0,0,20);
+	exitButton->setTitle("MAIN MENU",FONT_NAME,0,0,12);
 
 	backButton = new JvButton(0,by,spb->width,spb->height);
 	spb = new JvSprite(0,0,bimg);
 	spbH = new JvSprite(0,0,bimgh);
 	backButton->loadGraphic(spb,spbH);
-	backButton->setTitle("RESUME GAME",FONT_NAME,0,0,20);
+	backButton->setTitle("RESUME GAME",FONT_NAME,0,0,12);
 
 	resButton->setCallback(ResButton_callback);
 	nextButton->setCallback(NextButton_callback);
@@ -411,8 +410,9 @@ void GameState::create()
 	buttonBg->scrollFactor.y=0;
 	buttonBg->setCollide(false);
 	
-	gameoverTile = new JvText(JvG::width/2-8*20/2,30,200,30,FONT_NAME,"GAME OVER");
-	gameoverTile->setSize(20);
+	gameoverTile = new JvText(0,30,200,30,FONT_NAME,"GAME OVER");
+	gameoverTile->x = JvG::width/2 - gameoverTile->width/2;
+	gameoverTile->setSize(16);
 	gameoverTile->setColor(MAKE_RGBA_8888(255,0,0,255));
 	gameoverTile->scrollFactor.x =0;
 	gameoverTile->scrollFactor.y =0;
@@ -423,8 +423,9 @@ void GameState::create()
 	add(exitButton);
 	add(backButton);
 	
-	pauseTile = new JvText(JvG::width/2-4*20/2,30,200,30,FONT_NAME,"PAUSE");
-	pauseTile->setSize(20);
+	pauseTile = new JvText(0,30,200,30,FONT_NAME,"PAUSE");
+	pauseTile->x = JvG::width/2 - pauseTile->width/2;
+	pauseTile->setSize(16);
 	pauseTile->setColor(MAKE_RGBA_8888(255,0,0,255));
 	pauseTile->scrollFactor.x=0;
 	pauseTile->scrollFactor.y=0;

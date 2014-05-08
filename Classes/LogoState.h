@@ -1,7 +1,7 @@
 #ifndef _LOGOSTATE_H
 #define _LOGOSTATE_H
 
-#include "JvState.h"
+#include "JvGame/JvState.h"
 
 class JvText;
 class JvSprite;

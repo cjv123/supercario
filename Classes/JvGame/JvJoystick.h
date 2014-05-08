@@ -1,6 +1,5 @@
 #ifndef _JOYSTICK_H
 #define _JOYSTICK_H
-#pragma warning(disable:4786)
 #include <map>
 using namespace std;
 

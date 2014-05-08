@@ -1,5 +1,5 @@
 #include "StoneHiddenShow.h"
-#include "JvH.h"
+#include "JvGame/JvH.h"
 
 StoneHiddenShow::StoneHiddenShow(double X,double Y) : Stone(X,Y)
 {

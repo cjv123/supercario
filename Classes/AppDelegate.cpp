@@ -12,6 +12,8 @@ AppDelegate::~AppDelegate()
 }
 
 bool AppDelegate::applicationDidFinishLaunching() {
+	CCLOG("rungame!");
+
     // initialize director
     CCDirector* pDirector = CCDirector::sharedDirector();
     CCEGLView* pEGLView = CCEGLView::sharedOpenGLView();
@@ -26,8 +28,8 @@ bool AppDelegate::applicationDidFinishLaunching() {
     pDirector->setAnimationInterval(1.0 / 60);
 
     // create a scene. it's an autorelease object
-    CCScene *pScene = AppScreen::scene();
-
+   CCScene *pScene = AppScreen::scene();
+	//CCScene* testscene = CCScene::create();
     // run
     pDirector->runWithScene(pScene);
 

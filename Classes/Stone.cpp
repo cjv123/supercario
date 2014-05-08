@@ -1,5 +1,5 @@
 #include "Stone.h"
-#include "JvH.h"
+#include "JvGame/JvH.h"
 #include "GameState.h"
 #include "Hero.h"
 
@@ -11,9 +11,9 @@ Stone::Stone(double X,double Y) : JvSprite(X,Y)
 	emitter=new JvEmitter;
 	JvG::stateP->add(emitter);
 	emitter->delay = 3;
-	emitter->setXSpeed(-80*2,80*2);
-	emitter->setYSpeed(-200*2,0);
-	emitter->setRotation(-720,-720);
+	emitter->setXSpeed(-80,80);
+	emitter->setYSpeed(-200,0);
+	emitter->setRotation(-360,-360);
 	emitter->setSize(5,5);
 	emitter->createSprites("stone_gibs.png",4,4,true,0);
 }

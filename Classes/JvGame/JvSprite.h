@@ -110,6 +110,8 @@ protected:
 
 	bool _isFillRect;
 	int _rectColor;
+
+	CCLayerColor* _ccFillLayer;
 private:
 };
 

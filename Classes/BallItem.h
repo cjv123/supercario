@@ -1,7 +1,7 @@
 #ifndef _BALLITEM_H
 #define _BALLITEM_H
 
-#include "JvSprite.h"
+#include "JvGame/JvSprite.h"
 
 class BallItem : public JvSprite
 {

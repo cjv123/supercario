@@ -1,7 +1,6 @@
 #ifndef _HERO_H
 #define _HERO_H
-#pragma warning(disable:4786)
-#include "JvSprite.h"
+#include "JvGame/JvSprite.h"
 
 class JvEmitter;
 

@@ -17,6 +17,9 @@ JvSprite::JvSprite(double X /* =0 */,double Y/* =0 */,
 	facing = FACERIGHT;
 	_isFillRect = false;
 	_mask = 0;
+
+	_ccFillLayer = CCLayerColor::create();
+	_ccFillLayer->retain();
 }
 
 JvSprite::~JvSprite()
@@ -25,6 +28,12 @@ JvSprite::~JvSprite()
 	{
 		_pixels->release();
 		_pixels = NULL;
+	}
+
+	if (_ccFillLayer)
+	{
+		_ccFillLayer->release();
+		_ccFillLayer = NULL;
 	}
 
 	//Çå³ý¶¯»­
@@ -120,7 +129,14 @@ void JvSprite::render()
 
 	if (_isFillRect)
 	{
-		
+		CCSize winsize = CCDirector::sharedDirector()->getRunningScene()->getContentSize();
+		int r,g,b,a;
+		GET_RGBA_8888(_rectColor,r,g,b,a);
+		_ccFillLayer->setContentSize(CCSizeMake(width,height));
+		_ccFillLayer->setColor(ccc3(r,g,b));
+		_ccFillLayer->setOpacity(a);
+		_ccFillLayer->setPosition(ccp(x,winsize.height-y-height));
+		_ccFillLayer->visit();
 	}
 }
 

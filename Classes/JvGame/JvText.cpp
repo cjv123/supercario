@@ -1,4 +1,3 @@
-#pragma warning(disable:4786)
 #include "JvText.h"
 #include "JvU.h"
 
@@ -15,15 +14,12 @@ JvText::JvText(double X,double Y, double Width,double Height,const char* fontnam
 	setCollide(false);
 	_fontname = fontname; 
 
-	CCSize winsize = CCDirector::sharedDirector()->getRunningScene()->getContentSize();
+	
 	_cclabel = CCLabelTTF::create(Text,fontname,_size);
 	_cclabel->retain();
 	_cclabel->setHorizontalAlignment(kCCTextAlignmentCenter);
 	_cclabel->setVerticalAlignment(kCCVerticalTextAlignmentCenter);
 	_cclabel->setAnchorPoint(ccp(0,1));
-	_cclabel->setDimensions(CCSizeMake(width,height));
-	_cclabel->setPosition(ccp(x,winsize.height - y));
-
 }
 
 JvText::~JvText()
@@ -86,6 +82,9 @@ int JvText::getLineHeight()
 
 void JvText::render()
 {
+	CCSize winsize = CCDirector::sharedDirector()->getRunningScene()->getContentSize();
+	_cclabel->setDimensions(CCSizeMake(width,height));
+	_cclabel->setPosition(ccp(x,winsize.height - y));
 	_cclabel->visit();
 }
 

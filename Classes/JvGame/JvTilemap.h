@@ -1,6 +1,5 @@
 #ifndef _JVTILEMAP_H
 #define _JVTILEMAP_H
-#pragma warning(disable:4786)
 #include "JvObject.h"
 
 #include <cocos2d.h>

@@ -1,4 +1,4 @@
-#include "JvH.h"
+#include "JvGame/JvH.h"
 #include "Coin.h"
 #include "GameState.h"
 #include "Hero.h"

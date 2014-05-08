@@ -1,7 +1,7 @@
 #ifndef _CREATESTATE_H
 #define _CREATESTATE_H
 
-#include "JvState.h"
+#include "JvGame/JvState.h"
 
 class CreateState : public JvState
 {

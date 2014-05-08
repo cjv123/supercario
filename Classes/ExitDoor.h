@@ -1,7 +1,7 @@
 #ifndef _EXITDOOR_H
 #define _EXITDOOR_H
 
-#include "JvSprite.h"
+#include "JvGame/JvSprite.h"
 
 class ExitDoor : public JvSprite
 {

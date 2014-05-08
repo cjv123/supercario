@@ -1,7 +1,7 @@
 #ifndef _STARTSTATE_H
 #define _STARTSTATE_H
 
-#include "JvState.h"
+#include "JvGame/JvState.h"
 
 class JvSprite;
 class JvText;

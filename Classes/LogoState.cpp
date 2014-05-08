@@ -1,5 +1,5 @@
 #include "LogoState.h"
-#include "JvH.h"
+#include "JvGame/JvH.h"
 #include "HomeState.h"
 #include "GameState.h"
 

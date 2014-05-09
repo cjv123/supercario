@@ -91,19 +91,19 @@ void Hero::update()
 		
 		//play("stand_f");
 		
-		if(JvG::joystick.isPress(LEFTCODE)){
+		if(JvG::joystick->isPress(LEFTCODE)){
 		//	play("move_f");
 			facing = FACELEFT;
 			acceleration.x -= _moveSpeed;
-		}else if(JvG::joystick.isPress(RIGHTCODE)){
+		}else if(JvG::joystick->isPress(RIGHTCODE)){
 		//	play("move_f");
 			facing = FACERIGHT;
 			acceleration.x += _moveSpeed;
 		}
 		
-		if(JvG::joystick.isPress(UPCODE)){
+		if(JvG::joystick->isPress(UPCODE)){
 			acceleration.y -= _moveSpeed;
-		}else if(JvG::joystick.isPress(DOWNCODE)){
+		}else if(JvG::joystick->isPress(DOWNCODE)){
 			acceleration.y += _moveSpeed;
 		}
 
@@ -135,7 +135,7 @@ void Hero::update()
 	
 	
 	offset.x=0;
-	if(JvG::joystick.isPress(LEFTCODE)){
+	if(JvG::joystick->isPress(LEFTCODE)){
 		facing = FACELEFT;
 		
 		if(_curAnim){
@@ -145,7 +145,7 @@ void Hero::update()
 		}
 		
 		acceleration.x -= drag.x;
-	}else if(JvG::joystick.isPress(RIGHTCODE)){
+	}else if(JvG::joystick->isPress(RIGHTCODE)){
 		facing = FACERIGHT;
 		acceleration.x += drag.x;
 		
@@ -161,7 +161,7 @@ void Hero::update()
 	}
 	
 	//Ìø
-	if(JvG::joystick.isJustPreess(ACODE))
+	if(JvG::joystick->isJustPreess(ACODE))
 	{
 		if( _hitWall || onFloor){
 			velocity.y = -_jumpPower;
@@ -179,7 +179,7 @@ void Hero::update()
 	}
 	
 	
-	if(JvG::joystick.isJustPreess(BCODE) && _canBall == true){
+	if(JvG::joystick->isJustPreess(BCODE) && _canBall == true){
 		if(_statusModel=="man"){
 			if(onFloor){
 				_changeTimer=8;
@@ -432,7 +432,7 @@ void Hero::changeToFlyMan()
 	
 	velocity.x = velocity.y = 0;
 	
-	JvG::joystick.reSet();
+	JvG::joystick->reSet();
 	GameState::gamePad->flyMode();
 	
 	visible = false;

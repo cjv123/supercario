@@ -27,8 +27,8 @@ void LogoState::create()
 	add(_jvgamelogo);
 	_jvgamelogo->visible = false;
 
-	JvG::save.bind("outmansave");
-	JvG::save.load(&GameState::gameData);
+	JvG::save->bind("outmansave");
+	JvG::save->load(&GameState::gameData);
 }
 
 void LogoState::update()
@@ -50,7 +50,7 @@ void LogoState::update()
 		JvG::switchState(new HomeState);
 	}
 	
-	if (_timer <=3*60 && JvG::joystick.isMouseUp())
+	if (_timer <=3*60 && JvG::joystick->isMouseUp())
 	{
 		camera.flash(MAKE_RGBA_8888(255,255,255,255),1);
 		setBgColor(MAKE_RGBA_8888(0,0,0,255));
@@ -59,7 +59,7 @@ void LogoState::update()
 		_jvgamelogo->visible = true;
 		_timer =3*60;
 	}
-	else if (_timer <=6*60 && JvG::joystick.isMouseUp())
+	else if (_timer <=6*60 && JvG::joystick->isMouseUp())
 	{
 		_timer =6*60;
 		JvG::switchState(new HomeState);

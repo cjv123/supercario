@@ -3,10 +3,11 @@
 
 class JvGame;
 class JvState;
-class JvJoystick;
 class JvCamera;
 class JvSound;
 class JvSave;
+class JvJoystick;
+
 
 /**
 *在这里放一些全局函数，全局对象
@@ -63,9 +64,9 @@ public:
 	static JvCamera* camera;
 
 	/*输入设备*/
-	static JvJoystick joystick;
+	static JvJoystick* joystick;
 
-	static JvSave save;
+	static JvSave* save;
 
 	static bool pause;
 };

@@ -6,7 +6,7 @@
 #include <SimpleAudioEngine.h>
 using namespace CocosDenshion;
 
-JvGame* JvG::jvGameP;
+JvGame* JvG::jvGameP = NULL;
 unsigned int JvG::width;
 unsigned int JvG::height;
 JvState* JvG::stateP = NULL;
@@ -14,9 +14,9 @@ unsigned int JvG::frameRate;
 double JvG::elapsed;
 double JvG::maxElapsed;
 double JvG::timeScale;
-JvJoystick JvG::joystick;
+JvJoystick* JvG::joystick=NULL;
 JvCamera* JvG::camera = NULL;
-JvSave JvG::save;
+JvSave* JvG::save=NULL;
 bool JvG::pause = false;
 
 void JvG::setGameData(JvGame* JvGameP,unsigned int Width,

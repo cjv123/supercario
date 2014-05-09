@@ -89,7 +89,7 @@ void AppScreen::ccTouchesBegan( CCSet *pTouches, CCEvent *pEvent )
 		int x = touch->getLocation().x;
 		int y = touch->getLocation().y;
 		int id = touch->getID();
-		JvG::joystick.mouseDown(x,getContentSize().height-y,id);
+		JvG::joystick->mouseDown(x,getContentSize().height-y,id);
 	}
 }
 
@@ -101,7 +101,7 @@ void AppScreen::ccTouchesMoved( CCSet *pTouches, CCEvent *pEvent )
 		int x = touch->getLocation().x;
 		int y = touch->getLocation().y;
 		int id = touch->getID();
-		JvG::joystick.mouseMove(x,getContentSize().height-y,id);
+		JvG::joystick->mouseMove(x,getContentSize().height-y,id);
 	}
 }
 
@@ -113,7 +113,7 @@ void AppScreen::ccTouchesEnded( CCSet *pTouches, CCEvent *pEvent )
 		int x = touch->getLocation().x;
 		int y = touch->getLocation().y;
 		int id = touch->getID();
-		JvG::joystick.mouseUp(x,getContentSize().height-y,id);
+		JvG::joystick->mouseUp(x,getContentSize().height-y,id);
 	}
 }
 
@@ -125,6 +125,6 @@ void AppScreen::ccTouchesCancelled( CCSet *pTouches, CCEvent *pEvent )
 		int x = touch->getLocation().x;
 		int y = touch->getLocation().y;
 		int id = touch->getID();
-		JvG::joystick.mouseUp(x,getContentSize().height-y,id);
+		JvG::joystick->mouseUp(x,getContentSize().height-y,id);
 	}
 }

@@ -66,7 +66,7 @@ void JvButton::update()
 	JvGroup::update();
 	
 	JvRect rect(x,y,width,height);
-	if (JvG::joystick.isMouseIn(rect))
+	if (JvG::joystick->isMouseIn(rect))
 	{
 		if(_onP!=NULL)
 			_onP->visible = true;

@@ -468,7 +468,7 @@ void GameState::pause()
 
 		//nge_print("rect:x:%lf,y:%lf,w:%lf,h:%lf\n",nowShowTextPad->x,nowShowTextPad->y,
 		//		nowShowTextPad->width,nowShowTextPad->height);
-		if (JvG::joystick.isMouseIn(rect))
+		if (JvG::joystick->isMouseIn(rect))
 		{
 			nowShowTextPad->close();
 			JvG::pause = false;

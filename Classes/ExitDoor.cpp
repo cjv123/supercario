@@ -17,7 +17,7 @@ void ExitDoor::update()
 		overlaps(GameState::heroP) && 
 		GameState::heroP->onFloor
 		){    
-		//if(JvG::joystick.isJustPreess(UPCODE)){
+		//if(JvG::joystick->isJustPreess(UPCODE)){
 			
 			if(GameState::isGetKey)
 			{
@@ -36,7 +36,7 @@ void ExitDoor::update()
 					{
 						GameState::gameData.level[GameState::nowLv - 1] = STARPASS;
 					}
-					JvG::save.save(&GameState::gameData,sizeof(GameData));
+					JvG::save->save(&GameState::gameData,sizeof(GameData));
 				}
 				GameState::isGetKey = false;
 				JvG::switchState(new PassState);

@@ -1,19 +1,12 @@
 #include "JvGame.h"
 #include "JvState.h"
-
-
-void mouse_btn(int type,int x,int y)   
-{   
-	JvG::jvGameP->mouseClick(type,x,y);
-}   
-
-void mouse_move(int x,int y)
-{
-	JvG::jvGameP->mouseMove(x,y);	
-}
+#include "JvSave.h"
 
 JvGame::JvGame()
 {
+	JvG::save = new JvSave;
+	JvG::joystick = new JvJoystick;
+
 	_run=false;
 	_delState = NULL;
 }
@@ -21,6 +14,9 @@ JvGame::JvGame()
 
 JvGame::JvGame(unsigned int GameSizeX,unsigned int GameSizeY)
 {
+// 	JvG::save = new JvSave;
+// 	JvG::joystick = new JvJoystick;
+
 	JvG::setGameData(this,GameSizeX,GameSizeY);
 	_run = false;
 	_delState = NULL;
@@ -33,6 +29,9 @@ JvGame::~JvGame()
 	{
 		delete JvG::stateP;
 	}
+
+	delete JvG::save;
+	delete JvG::joystick;
 }
 
 void JvGame::setInitState(JvState* initState)
@@ -101,7 +100,7 @@ bool JvGame::update()
 		JvG::stateP->defaultGroup.dead = false;
 		JvG::stateP->create();
 		_switchState = NULL;
-		JvG::joystick.reSet();
+		JvG::joystick->reSet();
 	}
 
 	if (JvG::stateP != NULL)
@@ -109,30 +108,30 @@ bool JvGame::update()
 		JvG::stateP->update();
 		JvG::stateP->render();
 	}
-	JvG::joystick.update();
+	JvG::joystick->update();
 
 	return true;
 }
 
 void JvGame::btnDown(KEYCODE keycode)
 {
-	JvG::joystick.pressDown(keycode);
+	JvG::joystick->pressDown(keycode);
 }
 
 
 void JvGame::btnUp(KEYCODE keycode)
 {
-	JvG::joystick.pressUp(keycode);
+	JvG::joystick->pressUp(keycode);
 }
 
 void JvGame::mouseClick(int type,int x,int y)
 {
 	switch (type) {
 	case 0:
-		JvG::joystick.mouseUp(x,y);
+		JvG::joystick->mouseUp(x,y);
 		break;
 	case 1:
-		JvG::joystick.mouseDown(x,y);
+		JvG::joystick->mouseDown(x,y);
 		break;
 	default:
 		break;
@@ -141,7 +140,7 @@ void JvGame::mouseClick(int type,int x,int y)
 
 void JvGame::mouseMove(int x,int y)
 {
-	JvG::joystick.mouseMove(x,y);
+	JvG::joystick->mouseMove(x,y);
 }
 
 void JvGame::exit()

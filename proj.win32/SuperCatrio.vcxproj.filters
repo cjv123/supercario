@@ -8,7 +8,7 @@
       <UniqueIdentifier>{bb6c862e-70e9-49d9-81b7-3829a6f50471}</UniqueIdentifier>
     </Filter>
     <Filter Include="Classes\JvGame">
-      <UniqueIdentifier>{0f66d9d7-6a06-469b-affa-e41050b0d3e8}</UniqueIdentifier>
+      <UniqueIdentifier>{9eede1c8-f6e6-4b75-9d6c-0c3d7e6972a8}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -17,66 +17,6 @@
     </ClCompile>
     <ClCompile Include="..\Classes\AppDelegate.cpp">
       <Filter>Classes</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Classes\JvGame\JvAnim.cpp">
-      <Filter>Classes\JvGame</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Classes\JvGame\JvButton.cpp">
-      <Filter>Classes\JvGame</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Classes\JvGame\JvCamera.cpp">
-      <Filter>Classes\JvGame</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Classes\JvGame\JvEmitter.cpp">
-      <Filter>Classes\JvGame</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Classes\JvGame\JvG.cpp">
-      <Filter>Classes\JvGame</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Classes\JvGame\JvGame.cpp">
-      <Filter>Classes\JvGame</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Classes\JvGame\JvGroup.cpp">
-      <Filter>Classes\JvGame</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Classes\JvGame\JvJoystick.cpp">
-      <Filter>Classes\JvGame</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Classes\JvGame\JvList.cpp">
-      <Filter>Classes\JvGame</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Classes\JvGame\JvObject.cpp">
-      <Filter>Classes\JvGame</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Classes\JvGame\JvPoint.cpp">
-      <Filter>Classes\JvGame</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Classes\JvGame\JvQuadTree.cpp">
-      <Filter>Classes\JvGame</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Classes\JvGame\JvRect.cpp">
-      <Filter>Classes\JvGame</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Classes\JvGame\JvSave.cpp">
-      <Filter>Classes\JvGame</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Classes\JvGame\JvSprite.cpp">
-      <Filter>Classes\JvGame</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Classes\JvGame\JvState.cpp">
-      <Filter>Classes\JvGame</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Classes\JvGame\JvText.cpp">
-      <Filter>Classes\JvGame</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Classes\JvGame\JvTextPad.cpp">
-      <Filter>Classes\JvGame</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Classes\JvGame\JvTilemap.cpp">
-      <Filter>Classes\JvGame</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Classes\JvGame\JvU.cpp">
-      <Filter>Classes\JvGame</Filter>
     </ClCompile>
     <ClCompile Include="..\Classes\AppScreen.cpp">
       <Filter>Classes</Filter>
@@ -165,6 +105,66 @@
     <ClCompile Include="..\Classes\StoneMoveD.cpp">
       <Filter>Classes</Filter>
     </ClCompile>
+    <ClCompile Include="..\Classes\JvGame\JvAnim.cpp">
+      <Filter>Classes\JvGame</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\JvGame\JvButton.cpp">
+      <Filter>Classes\JvGame</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\JvGame\JvCamera.cpp">
+      <Filter>Classes\JvGame</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\JvGame\JvEmitter.cpp">
+      <Filter>Classes\JvGame</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\JvGame\JvG.cpp">
+      <Filter>Classes\JvGame</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\JvGame\JvGame.cpp">
+      <Filter>Classes\JvGame</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\JvGame\JvGroup.cpp">
+      <Filter>Classes\JvGame</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\JvGame\JvJoystick.cpp">
+      <Filter>Classes\JvGame</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\JvGame\JvList.cpp">
+      <Filter>Classes\JvGame</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\JvGame\JvObject.cpp">
+      <Filter>Classes\JvGame</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\JvGame\JvPoint.cpp">
+      <Filter>Classes\JvGame</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\JvGame\JvQuadTree.cpp">
+      <Filter>Classes\JvGame</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\JvGame\JvRect.cpp">
+      <Filter>Classes\JvGame</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\JvGame\JvSave.cpp">
+      <Filter>Classes\JvGame</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\JvGame\JvSprite.cpp">
+      <Filter>Classes\JvGame</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\JvGame\JvState.cpp">
+      <Filter>Classes\JvGame</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\JvGame\JvText.cpp">
+      <Filter>Classes\JvGame</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\JvGame\JvTextPad.cpp">
+      <Filter>Classes\JvGame</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\JvGame\JvTilemap.cpp">
+      <Filter>Classes\JvGame</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\JvGame\JvU.cpp">
+      <Filter>Classes\JvGame</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="main.h">
@@ -172,69 +172,6 @@
     </ClInclude>
     <ClInclude Include="..\Classes\AppDelegate.h">
       <Filter>Classes</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Classes\JvGame\JvAnim.h">
-      <Filter>Classes\JvGame</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Classes\JvGame\JvButton.h">
-      <Filter>Classes\JvGame</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Classes\JvGame\JvCamera.h">
-      <Filter>Classes\JvGame</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Classes\JvGame\JvEmitter.h">
-      <Filter>Classes\JvGame</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Classes\JvGame\JvG.h">
-      <Filter>Classes\JvGame</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Classes\JvGame\JvGame.h">
-      <Filter>Classes\JvGame</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Classes\JvGame\JvGroup.h">
-      <Filter>Classes\JvGame</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Classes\JvGame\JvH.h">
-      <Filter>Classes\JvGame</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Classes\JvGame\JvJoystick.h">
-      <Filter>Classes\JvGame</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Classes\JvGame\JvList.h">
-      <Filter>Classes\JvGame</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Classes\JvGame\JvObject.h">
-      <Filter>Classes\JvGame</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Classes\JvGame\JvPoint.h">
-      <Filter>Classes\JvGame</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Classes\JvGame\JvQuadTree.h">
-      <Filter>Classes\JvGame</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Classes\JvGame\JvRect.h">
-      <Filter>Classes\JvGame</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Classes\JvGame\JvSave.h">
-      <Filter>Classes\JvGame</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Classes\JvGame\JvSprite.h">
-      <Filter>Classes\JvGame</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Classes\JvGame\JvState.h">
-      <Filter>Classes\JvGame</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Classes\JvGame\JvText.h">
-      <Filter>Classes\JvGame</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Classes\JvGame\JvTextPad.h">
-      <Filter>Classes\JvGame</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Classes\JvGame\JvTilemap.h">
-      <Filter>Classes\JvGame</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Classes\JvGame\JvU.h">
-      <Filter>Classes\JvGame</Filter>
     </ClInclude>
     <ClInclude Include="..\Classes\AppScreen.h">
       <Filter>Classes</Filter>
@@ -325,6 +262,69 @@
     </ClInclude>
     <ClInclude Include="..\Classes\StoneMoveD.h">
       <Filter>Classes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\JvGame\JvAnim.h">
+      <Filter>Classes\JvGame</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\JvGame\JvButton.h">
+      <Filter>Classes\JvGame</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\JvGame\JvCamera.h">
+      <Filter>Classes\JvGame</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\JvGame\JvEmitter.h">
+      <Filter>Classes\JvGame</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\JvGame\JvG.h">
+      <Filter>Classes\JvGame</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\JvGame\JvGame.h">
+      <Filter>Classes\JvGame</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\JvGame\JvGroup.h">
+      <Filter>Classes\JvGame</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\JvGame\JvH.h">
+      <Filter>Classes\JvGame</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\JvGame\JvJoystick.h">
+      <Filter>Classes\JvGame</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\JvGame\JvList.h">
+      <Filter>Classes\JvGame</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\JvGame\JvObject.h">
+      <Filter>Classes\JvGame</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\JvGame\JvPoint.h">
+      <Filter>Classes\JvGame</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\JvGame\JvQuadTree.h">
+      <Filter>Classes\JvGame</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\JvGame\JvRect.h">
+      <Filter>Classes\JvGame</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\JvGame\JvSave.h">
+      <Filter>Classes\JvGame</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\JvGame\JvSprite.h">
+      <Filter>Classes\JvGame</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\JvGame\JvState.h">
+      <Filter>Classes\JvGame</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\JvGame\JvText.h">
+      <Filter>Classes\JvGame</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\JvGame\JvTextPad.h">
+      <Filter>Classes\JvGame</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\JvGame\JvTilemap.h">
+      <Filter>Classes\JvGame</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\JvGame\JvU.h">
+      <Filter>Classes\JvGame</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

@@ -1,6 +1,7 @@
 #include "StartState.h"
 #include "GameState.h"
 #include "JvGame/JvH.h"
+#include "AndroidInterface.h"
 
 StartState::StartState()
 {
@@ -11,6 +12,7 @@ StartState::StartState()
 
 void StartState::create()
 {
+	set_adview_visible(0);
 	setBgColor(MAKE_RGBA_8888(87,196,247,255));
 
 	JvSprite* bg = new JvSprite(0,0);

@@ -11,7 +11,7 @@ static void key_handler( UINT message,WPARAM wParam, LPARAM lParam )
 	switch (wParam)
 	{
 	case VK_UP:
-		keychar = UPCODE;
+		keychar = ACODE;
 		break;
 	case VK_DOWN:
 		keychar = DOWNCODE;
@@ -54,9 +54,15 @@ bool AppScreen::init()
 #endif
 
 	setTouchEnabled(true);
+	int sw = 480/2,sh = 320/2;
+
+	m_screen = CCRenderTexture::create(sw,sh);
+	addChild(m_screen);
+	m_screen->setScale(min(getContentSize().width/sw,getContentSize().height/sh));
+	m_screen->setPosition(ccp(getContentSize().width/2,getContentSize().height/2));
 
 	jvgame = new JvGame();
-	jvgame->setScreenInfo(getContentSize().width,getContentSize().height);
+	jvgame->setScreenInfo(sw,sh);
 	jvgame->setInitState(new LogoState);
 	jvgame->run();
 
@@ -74,7 +80,9 @@ CCScene* AppScreen::scene()
 void AppScreen::visit( void )
 {
 	CCLayer::visit();
+	m_screen->beginWithClear(0,0,0,0);
 	jvgame->update();
+	m_screen->end();
 }
 
 void AppScreen::update( float delta )

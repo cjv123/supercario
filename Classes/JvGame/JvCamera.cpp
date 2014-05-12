@@ -299,7 +299,7 @@ void JvCamera::draw(CCSprite* texture,float sx ,float sy ,float sw ,float sh ,fl
 {
 	int maskcolor = mask;
 	
-	CCSize winsize = CCDirector::sharedDirector()->getRunningScene()->getContentSize();
+	CCSize winsize = CCSizeMake(JvG::width,JvG::height);
 	float pixh =texture->getContentSize().height;
 	texture->setPositionX(dx);
 	texture->setPositionY(winsize.height - dy);

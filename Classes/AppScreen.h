@@ -27,6 +27,7 @@ public:
 
 protected:
 private:
+	CCRenderTexture* m_screen;
 };
 
 #endif

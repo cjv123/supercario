@@ -3,6 +3,7 @@
 #include "GameState.h"
 #include "StartState.h"
 #include "HomeState.h"
+#include "AndroidInterface.h"
 
 static void selectLvButton(int par)
 {
@@ -22,6 +23,7 @@ SelectState::SelectState(bool isMusic)
 
 void SelectState::create()
 {
+	set_adview_visible(1);
 //	setBgColor(MAKE_RGBA_8888(87,196,247,255));
 	JvState::create();
 	camera->flash(MAKE_RGBA_8888(255,255,255,255),1);
@@ -92,7 +94,7 @@ void SelectState::create()
 	JvText* txt = NULL;
 	i=0;
 	char str[5];
-	int interval = 10;
+	int interval = 2;
 	for (;i<28;i++)
 	{
 		col = i % 7;

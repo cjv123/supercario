@@ -83,7 +83,7 @@ int JvText::getLineHeight()
 
 void JvText::render()
 {
-	CCSize winsize = CCDirector::sharedDirector()->getRunningScene()->getContentSize();
+	CCSize winsize = CCSizeMake(JvG::width,JvG::height);
 	_cclabel->setDimensions(CCSizeMake(width,height));
 	_cclabel->setPosition(ccp(x,winsize.height - y));
 	_cclabel->visit();

@@ -178,7 +178,7 @@ void JvTilemap::renderTile()
 	int screenYInTile = (int)(cameraRect.y/_tileHeight);
 	int screenWInTile = JvU::ceil(JvG::width/_tileWidth);
 	int screenHInTile = JvU::ceil(JvG::height/_tileHeight);
-	CCSize winsize = CCDirector::sharedDirector()->getRunningScene()->getContentSize();
+	CCSize winsize = CCSizeMake(JvG::width,JvG::height);
 
 	double offsetX = JvU::ceil(cameraRect.x - screenXInTile*(double)_tileWidth);
 	double offsetY = JvU::ceil(cameraRect.y - screenYInTile*(double)_tileHeight);

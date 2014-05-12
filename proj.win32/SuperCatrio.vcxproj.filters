@@ -165,6 +165,9 @@
     <ClCompile Include="..\Classes\JvGame\JvU.cpp">
       <Filter>Classes\JvGame</Filter>
     </ClCompile>
+    <ClCompile Include="..\Classes\AndroidInterface.cpp">
+      <Filter>Classes</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="main.h">
@@ -325,6 +328,9 @@
     </ClInclude>
     <ClInclude Include="..\Classes\JvGame\JvU.h">
       <Filter>Classes\JvGame</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\AndroidInterface.h">
+      <Filter>Classes</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

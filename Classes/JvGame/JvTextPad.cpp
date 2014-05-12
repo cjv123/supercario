@@ -65,7 +65,7 @@ void JvTextPad::render()
 	
 	//FillRect(_x,_y,_w,_h,_bgColor,DISPLAY_PIXEL_FORMAT_4444);
 
-	CCSize winsize = CCDirector::sharedDirector()->getRunningScene()->getContentSize();
+	CCSize winsize = CCSizeMake(JvG::width,JvG::height);
 	int r,g,b,a;
 	GET_RGBA_8888(_bgColor,r,g,b,a);
 	_cclayer->setColor(ccc3(r,g,b));

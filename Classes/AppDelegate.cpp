@@ -1,5 +1,6 @@
 #include "AppDelegate.h"
 #include "AppScreen.h"
+#include "AndroidInterface.h"
 
 USING_NS_CC;
 
@@ -33,6 +34,8 @@ bool AppDelegate::applicationDidFinishLaunching() {
     // run
     pDirector->runWithScene(pScene);
 
+	pDirector->getKeypadDispatcher()->addDelegate(KeyDelegate::getInstance());
+
     return true;
 }
 
@@ -51,3 +54,31 @@ void AppDelegate::applicationWillEnterForeground() {
     // if you use SimpleAudioEngine, it must resume here
     // SimpleAudioEngine::sharedEngine()->resumeBackgroundMusic();
 }
+
+
+void KeyDelegate::keyBackClicked()
+{
+	exit_game();
+}
+
+void KeyDelegate::keyMenuClicked()
+{
+
+}
+
+KeyDelegate* KeyDelegate::getInstance()
+{
+	static KeyDelegate instance;
+	return &instance;
+}
+
+KeyDelegate::KeyDelegate()
+{
+
+}
+
+KeyDelegate::~KeyDelegate()
+{
+
+}
+

@@ -6,9 +6,9 @@
 
 Hero::Hero(double X,double Y) : JvSprite(X,Y)
 {
-	_jumpPower=200;
-	_gv=400;
-	_moveSpeed=100;
+	_jumpPower=225;
+	_gv=420;
+	_moveSpeed=120;
 	_statusModel="man";
 	_hitWall=false;
 	_changeTimer=0;
@@ -491,7 +491,7 @@ void Hero::changeToMan()
 	addAnimation("die",dieframes,8);
 
 	y-=31-16;
-	width=16;
+	//width=16;
 
 	GameState::gamePad->walkMode();
 }
@@ -516,7 +516,7 @@ void Hero::changeToBall()
 	addAnimation("jump_down_b",moveframes,16);
 
 	y+=31-16;
-	width=16-1;
+	//width=16-1;
 }
 
 bool Hero::isCanBall()

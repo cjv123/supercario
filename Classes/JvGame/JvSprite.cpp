@@ -129,7 +129,7 @@ void JvSprite::render()
 
 	if (_isFillRect)
 	{
-		CCSize winsize = CCDirector::sharedDirector()->getRunningScene()->getContentSize();
+		CCSize winsize = CCSizeMake(JvG::width,JvG::height);
 		int r,g,b,a;
 		GET_RGBA_8888(_rectColor,r,g,b,a);
 		_ccFillLayer->setContentSize(CCSizeMake(width,height));

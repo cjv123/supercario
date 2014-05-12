@@ -4,13 +4,13 @@
 #include "StartState.h"
 #include "HomeState.h"
 
-void selectLvButton(int par)
+static void selectLvButton(int par)
 {
 	GameState::nowLv = par;
 	JvG::switchState(new StartState);
 }
 
-void back_button_callback(int par)
+static void back_button_callback(int par)
 {
 	JvG::switchState(new HomeState(false));
 }

@@ -4,7 +4,6 @@
 class JvGame;
 class JvState;
 class JvCamera;
-class JvSound;
 class JvSave;
 class JvJoystick;
 

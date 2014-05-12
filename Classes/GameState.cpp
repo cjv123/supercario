@@ -46,25 +46,25 @@ JvText* GameState::gameoverTile = NULL;
 JvText* GameState::pauseTile = NULL;
 JvTextPad* GameState::nowShowTextPad = NULL;
 
-void ResButton_callback(int par)
+static void ResButton_callback(int par)
 {
 	JvG::switchState(new GameState);
 	JvG::pause = false;
 }
 
-void NextButton_callback(int par)
+static void NextButton_callback(int par)
 {
 	
 }
 
-void Exit_callback(int par)
+static void Exit_callback(int par)
 {
 	JvG::stopMusic();
 	JvG::switchState(new SelectState);
 	JvG::pause = false;
 }
 
-void back_callback(int par)
+static void back_callback(int par)
 {
 	GameState::backButton->visible = false;
 	GameState::resButton->visible = false;
@@ -74,7 +74,7 @@ void back_callback(int par)
 	JvG::pause = false;
 }
 
-void pause_callback(int par)
+static void pause_callback(int par)
 {
 	if (GameState::resButton->visible == true)
 	{
@@ -155,9 +155,13 @@ void GameState::create()
 	
 	char xmlfilename[20];
 	sprintf(xmlfilename,"Level_lv%d.xml",GameState::nowLv);
-	tinyxml2::XMLDocument doc;
-	doc.LoadFile(xmlfilename);
-	XMLElement* rootElement = doc.RootElement();
+	unsigned long s=0;
+	unsigned char* xmldata = CCFileUtils::sharedFileUtils()->getFileData(xmlfilename,"rb",&s);
+	CCAssert(xmldata,"fuck");
+
+	tinyxml2::XMLDocument* doc = new tinyxml2::XMLDocument;
+	doc->Parse((const char*)xmldata);
+	XMLElement* rootElement = doc->RootElement();
 	
 	XMLNode* NodeP = rootElement->FirstChildElement("objects");
 	if (NodeP)
@@ -333,6 +337,8 @@ void GameState::create()
 		}
 		
 	}
+	delete doc;
+	delete []xmldata;
 	
 	char lvstr[7];
 	sprintf(lvstr,"Lv.%d",nowLv);

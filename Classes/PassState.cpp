@@ -4,13 +4,13 @@
 #include "SelectState.h"
 
 
-void NextButton_callback_ps(int par)
+static void NextButton_callback_ps(int par)
 {
 	GameState::nowLv++;
 	JvG::switchState(new GameState);
 }
 
-void Exit_callback_ps(int par)
+static void Exit_callback_ps(int par)
 {
 	JvG::switchState(new SelectState);
 }

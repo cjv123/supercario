@@ -3,64 +3,64 @@
 #include "GameState.h"
 #include "Hero.h"
 
-void leftButtonDown(int par)
+static void leftButtonDown(int par)
 {
 	JvG::jvGameP->btnDown(LEFTCODE);
 }
 
-void leftButtonUp(int par)
+static void leftButtonUp(int par)
 {
 	JvG::jvGameP->btnUp(LEFTCODE);
 }
 
-void rightButtonDown(int par)
+static void rightButtonDown(int par)
 {
 	JvG::jvGameP->btnDown(RIGHTCODE);
 //	printf("rightdown\n");
 }
 
-void rightButtonUp(int par)
+static void rightButtonUp(int par)
 {
 	JvG::jvGameP->btnUp(RIGHTCODE);
 //	printf("rightup\n");
 }
 
-void upButtonDown(int par)
+static void upButtonDown(int par)
 {
 	JvG::jvGameP->btnDown(UPCODE);
 }
 
-void upButtonUp(int par)
+static void upButtonUp(int par)
 {
 	JvG::jvGameP->btnUp(UPCODE);
 }
 
-void downButtonDown(int par)
+static void downButtonDown(int par)
 {
 	JvG::jvGameP->btnDown(DOWNCODE);
 }
 
-void downButtonUp(int par)
+static void downButtonUp(int par)
 {
 	JvG::jvGameP->btnUp(DOWNCODE);
 }
 
-void ballButtonDown(int par)
+static void ballButtonDown(int par)
 {
 	JvG::jvGameP->btnDown(BCODE);
 }
 
-void ballButtonUp(int par)
+static void ballButtonUp(int par)
 {
 	JvG::jvGameP->btnUp(BCODE);
 }
 
-void jumpButtonDown(int par)
+static void jumpButtonDown(int par)
 {
 	JvG::jvGameP->btnDown(ACODE);
 }
 
-void jumpButtonUp(int par)
+static void jumpButtonUp(int par)
 {
 	JvG::jvGameP->btnUp(ACODE);
 }

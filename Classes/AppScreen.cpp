@@ -2,7 +2,7 @@
 #include "JvGame/JvH.h"
 #include "LogoState.h"
 
-static JvGame jvgame;
+static JvGame* jvgame=NULL;
 
 #ifdef WIN32
 static void key_handler( UINT message,WPARAM wParam, LPARAM lParam )
@@ -33,10 +33,10 @@ static void key_handler( UINT message,WPARAM wParam, LPARAM lParam )
 	switch (message)
 	{
 	case WM_KEYDOWN:
-		jvgame.btnDown(keychar);
+		jvgame->btnDown(keychar);
 		break;
 	case WM_KEYUP:
-		jvgame.btnUp(keychar);
+		jvgame->btnUp(keychar);
 		break;
 	}
 }
@@ -55,9 +55,10 @@ bool AppScreen::init()
 
 	setTouchEnabled(true);
 
-	jvgame.setScreenInfo(getContentSize().width,getContentSize().height);
-	jvgame.setInitState(new LogoState);
-	jvgame.run();
+	jvgame = new JvGame();
+	jvgame->setScreenInfo(getContentSize().width,getContentSize().height);
+	jvgame->setInitState(new LogoState);
+	jvgame->run();
 
 	return true;
 }
@@ -73,7 +74,7 @@ CCScene* AppScreen::scene()
 void AppScreen::visit( void )
 {
 	CCLayer::visit();
-	jvgame.update();
+	jvgame->update();
 }
 
 void AppScreen::update( float delta )

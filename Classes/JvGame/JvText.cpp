@@ -17,6 +17,7 @@ JvText::JvText(double X,double Y, double Width,double Height,const char* fontnam
 	
 	_cclabel = CCLabelTTF::create(Text,fontname,_size);
 	_cclabel->retain();
+	_cclabel->getTexture()->setAliasTexParameters();
 	_cclabel->setHorizontalAlignment(kCCTextAlignmentCenter);
 	_cclabel->setVerticalAlignment(kCCVerticalTextAlignmentCenter);
 	_cclabel->setAnchorPoint(ccp(0,1));

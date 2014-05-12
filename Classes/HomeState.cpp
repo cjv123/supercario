@@ -4,12 +4,12 @@
 #include "CreateState.h"
 #include "JvGame/JvH.h"
 
-void start_game_callback(int par)
+static void start_game_callback(int par)
 {
 	JvG::switchState(new SelectState(false));
 }
 
-void gotocreate_callback(int par)
+static void gotocreate_callback(int par)
 {
 	JvG::switchState(new CreateState);
 }

@@ -3,7 +3,7 @@
 #include "HomeState.h"
 #include "GameState.h"
 
-void create_back_callback(int par)
+static void create_back_callback(int par)
 {
 	JvG::switchState(new HomeState(false));
 }

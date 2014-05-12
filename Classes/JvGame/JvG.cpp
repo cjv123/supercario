@@ -40,7 +40,7 @@ void JvG::switchState(JvState* StateP)
 
 void JvG::playMusic( const char* filename,float Volume/*=1.0f*/ )
 {
-	SimpleAudioEngine::sharedEngine()->playBackgroundMusic(filename);
+	SimpleAudioEngine::sharedEngine()->playBackgroundMusic(filename,true);
 	SimpleAudioEngine::sharedEngine()->setBackgroundMusicVolume(Volume);
 }
 

@@ -10,7 +10,7 @@ JvTextPad::JvTextPad(double X, double Y,double Width,double Height,
 	height = Height;
 	_bgColor = MAKE_RGBA_8888(0,0,0,180);
 	_isShow = false;
-	_text = new JvText(x+50,y+15,Width-10,Height-10,FontFilename,Text);
+	_text = new JvText(x+15,y+10,Width-10,Height-10,FontFilename,Text);
 	_text->getCCLabel()->setHorizontalAlignment(kCCTextAlignmentLeft);
 	_text->setLineHeight(5);
 	_text->visible = false;

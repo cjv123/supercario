@@ -29,7 +29,7 @@ void SelectState::create()
 	camera->flash(MAKE_RGBA_8888(255,255,255,255),1);
 
 	_bgTileGroup = new JvGroup;
-	_bgTileW=50;
+	_bgTileW=25;
 	_bgTileWNum = JvU::ceil(JvG::width/_bgTileW)+3;
 	_bgTileHNum = JvU::ceil(JvG::height/_bgTileW)+3;
 	_bgTileNum = _bgTileHNum*_bgTileWNum;
@@ -80,7 +80,7 @@ void SelectState::create()
 	JvSprite* title  = new JvSprite;
 	title->loadGraphic("sel_title_en.png");
 	title->x = JvG::width/2 - title->width/2;
-	title->y = 35;
+	title->y = 0;
 	add(title);
 	
 	JvButton* lvButton;
@@ -94,7 +94,7 @@ void SelectState::create()
 	JvText* txt = NULL;
 	i=0;
 	char str[5];
-	int interval = 2;
+	int interval = 0;
 	for (;i<28;i++)
 	{
 		col = i % 7;
@@ -110,7 +110,7 @@ void SelectState::create()
 			lvButton = new JvButton(0,0,bImgSp->width,bHighImgSp->height);
 			int tarx = JvG::width/2-7*((int)lvButton->width+interval)/2;
 			lvButton->x = col * (lvButton->width+interval)+tarx;
-			lvButton->y = row * (lvButton->height+interval)+100;
+			lvButton->y = row * (lvButton->height+interval)+JvG::height/5;
 			lvButton->loadGraphic(bImgSp,bHighImgSp);
 			add(lvButton);
 			lvButton->setCallback(selectLvButton,NULL,i+1);
@@ -133,7 +133,7 @@ void SelectState::create()
 
 				if (GameState::gameData->level[i]==STARPASS)
 				{
-					JvSprite* star = new JvSprite(lvButton->x+20,lvButton->y+20);
+					JvSprite* star = new JvSprite(lvButton->x+17,lvButton->y+17);
 					star->loadGraphic("object_tile.png",true,false,16,16);
 					vector<int> staranim;
 					staranim.push_back(11);
@@ -148,7 +148,7 @@ void SelectState::create()
 		{
 			bImgSp = new JvSprite(0,0,bLockImg);
 			bImgSp->x = col * (lvButton->width+interval)+JvG::width/2-7*((int)lvButton->width+interval)/2;
-			bImgSp->y = row * (lvButton->height+interval)+100;
+			bImgSp->y = row * (lvButton->height+interval)+JvG::height/5;
 			add(bImgSp);
 		}
 	}
@@ -168,7 +168,7 @@ void SelectState::create()
 	
 	if (_isMusic)
 	{
-		JvG::playMusic("home.mp3",0);
+		JvG::playMusic("home.mp3");
 	}
 }
 

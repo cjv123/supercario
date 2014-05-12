@@ -10,14 +10,14 @@ Enemy::Enemy(double X,double Y) : JvSprite(X,Y)
 	emitter_em = new JvEmitter;
 	JvG::stateP->add(emitter_em);
 	emitter_em->delay = 3;
-	emitter_em->setXSpeed(-80*2,80*2);
-	emitter_em->setYSpeed(-200*2,0);
-	emitter_em->setRotation(-720,-720);
+	emitter_em->setXSpeed(-80,80);
+	emitter_em->setYSpeed(-200,0);
+	emitter_em->setRotation(-360,-360);
 	emitter_em->setSize(5,5);
 	emitter_em->createSprites("gibs.png",25,16,true,0);
 
-	velocity.x = 100;
-	acceleration.y = 400;
+	velocity.x = 50;
+	acceleration.y = 200;
 	
 	loadGraphic("enemy1.png",true,true,16,16);
 	vector<int> moveframes;
@@ -80,7 +80,7 @@ void Enemy::kill()
 	emitter_em->at(this);
 	emitter_em->start();
 	
-	JvG::play("dead.wav",1);
+	JvG::play("cai.wav",1);
 }
 
 void Enemy::hitLeft(JvObject* Contact,double Velocity)

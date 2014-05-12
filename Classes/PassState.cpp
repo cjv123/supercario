@@ -30,7 +30,7 @@ void PassState::create()
 // 	map->loadMap("pass.csv","map.png",16,16);
 // 	add(map);
 
-	hero = new JvSprite(226,130);
+	hero = new JvSprite(113,130);
 	hero->loadGraphic("hero.png",true,false,16,31);
 	vector<int> standAnima;
 	standAnima.push_back(1);
@@ -38,7 +38,7 @@ void PassState::create()
 	hero->play("stand");
 	add(hero);
 
-	heroFly = new JvSprite(226,129);
+	heroFly = new JvSprite(113,129);
 	heroFly->loadGraphic("flyup.png");
 
 	txt = new JvText(270,140,200,50,FONT_NAME,"Pass");
@@ -53,7 +53,7 @@ void PassState::create()
 	spb->loadGraphic("menubutton.png");
 	spbH->loadGraphic("menubutton_sel.png");
 	
-	nextButton = new JvButton(JvG::width/2-spb->width/2,80,spb->width,spb->height);
+	nextButton = new JvButton(JvG::width/2-spb->width/2,60,spb->width,spb->height);
 	nextButton->loadGraphic(spb,spbH);
 	nextButton->setTitle("NEXT LEVEL",FONT_NAME,0,0,12);
 	
@@ -62,7 +62,7 @@ void PassState::create()
 	spb->loadGraphic("menubutton.png");
 	spbH->loadGraphic("menubutton_sel.png");
 
-	exitButton = new JvButton(JvG::width/2-spb->width/2,145,spb->width,spb->height);
+	exitButton = new JvButton(JvG::width/2-spb->width/2,102,spb->width,spb->height);
 	exitButton ->loadGraphic(spb,spbH);
 	exitButton->setTitle("MAIN MENU",FONT_NAME,0,0,12);
 
@@ -73,7 +73,7 @@ void PassState::create()
 	bBg->createRect(0,0,JvG::width,JvG::height,MAKE_RGBA_8888(0,0,0,128));
 	add(bBg);
 
-	gameoverTile = new JvText(0,30,300,30,FONT_NAME,"Level Complete");
+	gameoverTile = new JvText(0,10,300,30,FONT_NAME,"Level Complete");
 	gameoverTile->x = JvG::width/2 - gameoverTile->width/2;
 	gameoverTile->setSize(20);
 	gameoverTile->setColor(MAKE_RGBA_8888(255,0,0,255));

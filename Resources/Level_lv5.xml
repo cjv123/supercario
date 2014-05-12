@@ -8,7 +8,6 @@
 		<Coin x="628" y="31"/>
 		<FlyObj x="1209" y="401"/>
 		<ExitDoor x="1549" y="84"/>
-		<QueObj x="70" y="410" />
 		<QueObj x="1118" y="410" text="Take the feathers,
 you can fly with four directional buttons to
 control movement.But when you encounter any

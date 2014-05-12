@@ -38,8 +38,8 @@ Hero::Hero(double X,double Y) : JvSprite(X,Y)
 	emitter = new JvEmitter;
 	JvG::stateP->add(emitter);
 	emitter->delay = 5;
-	emitter->setXSpeed(-500,500);
-	emitter->setYSpeed(-1000,80);
+	emitter->setXSpeed(-250,250);
+	emitter->setYSpeed(-500,40);
 //	emitter->setRotation(-720,-720);
 	emitter->setSize(5,5);
 	emitter->createSprites("herobomb.png",50,0,true,0.3f);
@@ -188,22 +188,22 @@ void Hero::update()
 				_statusModel="ball";
 			}
 		}else{
-			if(GameState::tileMap->getTile(JvU::floor(x/(16*2)),JvU::floor(y/(16*2))-1)>0 ||
-				GameState::tileMap->getTile(JvU::floor((x+14*2)/(16*2)),JvU::floor(y/(16*2))-1)>0
+			if(GameState::tileMap->getTile(JvU::floor(x/16),JvU::floor(y/16)-1)>0 ||
+				GameState::tileMap->getTile(JvU::floor((x+7)/16),JvU::floor(y/16)-1)>0
 			)
 			{
 				return;
 			}
 			
 			if(
-				GameState::tileMap->getTile(JvU::floor(x/(16*2))+1,JvU::floor(y/(16*2)))>0 &&
-				GameState::tileMap->getTile(JvU::floor(x/(16*2))-1,JvU::floor(y/(16*2)))>0
+				GameState::tileMap->getTile(JvU::floor(x/16)+1,JvU::floor(y/16))>0 &&
+				GameState::tileMap->getTile(JvU::floor(x/16)-1,JvU::floor(y/16))>0
 			){
 				return;
 			}
 			
 			if(_statusModel=="ball" && facing==FACERIGHT && 
-				GameState::tileMap->getTile(JvU::floor(x/(16*2))+1,JvU::floor(y/(16*2)))>0){
+				GameState::tileMap->getTile(JvU::floor(x/16)+1,JvU::floor(y/16))>0){
 				x-=1;
 			}
 			changeToMan();

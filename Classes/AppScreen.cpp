@@ -7,7 +7,7 @@ static JvGame* jvgame=NULL;
 #ifdef WIN32
 static void key_handler( UINT message,WPARAM wParam, LPARAM lParam )
 {
-	KEYCODE keychar;
+	KEYCODE keychar=NONE;
 	switch (wParam)
 	{
 	case VK_UP:
@@ -58,7 +58,8 @@ bool AppScreen::init()
 
 	m_screen = CCRenderTexture::create(sw,sh);
 	addChild(m_screen);
-	m_screen->setScale(min(getContentSize().width/sw,getContentSize().height/sh));
+	m_screenScale = min(getContentSize().width/sw,getContentSize().height/sh);
+	m_screen->setScale(m_screenScale);
 	m_screen->setPosition(ccp(getContentSize().width/2,getContentSize().height/2));
 
 	jvgame = new JvGame();
@@ -95,10 +96,10 @@ void AppScreen::ccTouchesBegan( CCSet *pTouches, CCEvent *pEvent )
 	for (CCSetIterator it = pTouches->begin();it!=pTouches->end();it++)
 	{
 		CCTouch* touch = (CCTouch*)(*it);
-		int x = touch->getLocation().x;
-		int y = touch->getLocation().y;
+		int x = touch->getLocation().x/m_screenScale;
+		int y = touch->getLocation().y/m_screenScale;
 		int id = touch->getID();
-		JvG::joystick->mouseDown(x,getContentSize().height-y,id);
+		JvG::joystick->mouseDown(x,JvG::height-y,id);
 	}
 }
 
@@ -107,10 +108,10 @@ void AppScreen::ccTouchesMoved( CCSet *pTouches, CCEvent *pEvent )
 	for (CCSetIterator it = pTouches->begin();it!=pTouches->end();it++)
 	{
 		CCTouch* touch = (CCTouch*)(*it);
-		int x = touch->getLocation().x;
-		int y = touch->getLocation().y;
+		int x = touch->getLocation().x/m_screenScale;
+		int y = touch->getLocation().y/m_screenScale;
 		int id = touch->getID();
-		JvG::joystick->mouseMove(x,getContentSize().height-y,id);
+		JvG::joystick->mouseMove(x,JvG::height-y,id);
 	}
 }
 
@@ -119,10 +120,10 @@ void AppScreen::ccTouchesEnded( CCSet *pTouches, CCEvent *pEvent )
 	for (CCSetIterator it = pTouches->begin();it!=pTouches->end();it++)
 	{
 		CCTouch* touch = (CCTouch*)(*it);
-		int x = touch->getLocation().x;
-		int y = touch->getLocation().y;
+		int x = touch->getLocation().x/m_screenScale;
+		int y = touch->getLocation().y/m_screenScale;
 		int id = touch->getID();
-		JvG::joystick->mouseUp(x,getContentSize().height-y,id);
+		JvG::joystick->mouseUp(x,JvG::height-y,id);
 	}
 }
 
@@ -131,9 +132,9 @@ void AppScreen::ccTouchesCancelled( CCSet *pTouches, CCEvent *pEvent )
 	for (CCSetIterator it = pTouches->begin();it!=pTouches->end();it++)
 	{
 		CCTouch* touch = (CCTouch*)(*it);
-		int x = touch->getLocation().x;
-		int y = touch->getLocation().y;
+		int x = touch->getLocation().x/m_screenScale;
+		int y = touch->getLocation().y/m_screenScale;
 		int id = touch->getID();
-		JvG::joystick->mouseUp(x,getContentSize().height-y,id);
+		JvG::joystick->mouseUp(x,JvG::height-y,id);
 	}
 }

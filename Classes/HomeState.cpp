@@ -76,7 +76,7 @@ void HomeState::create()
 	add(_bg);
 	_bg->velocity.x = -30;
 
-	JvSprite* titsp = new JvSprite(-81,-20);
+	JvSprite* titsp = new JvSprite(-81,-40);
 	titsp->loadGraphic("home_en.png");
 	titsp->x = JvG::width/2 - titsp->width/2;
 	add(titsp);
@@ -103,13 +103,14 @@ void HomeState::create()
 	createButton->setCallback(gotocreate_callback);
 	add(createButton);
 
-	JvText* powertxt = new JvText(JvG::width/2 - 380/2,JvG::height - 17,380,15,FONT_NAME,
-		"Power By ZF Studio 2012.Base by NGE2.Dirve by JvGame.");
+	JvText* powertxt = new JvText(JvG::width/2,JvG::height,0,0,FONT_NAME,
+		"Power By ZF Studio 2012.Dirve by JvGame.");
 	add(powertxt);
+	powertxt->getCCLabel()->setAnchorPoint(ccp(0.5,0));
 	
 	if (_isMusic)
 	{
-		JvG::playMusic("home.mp3",0);
+		JvG::playMusic("home.mp3");
 	}
 	
 }

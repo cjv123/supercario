@@ -42,15 +42,17 @@ void StartState::create()
 
 void StartState::update()
 {
+	int d = -_ui->height/5;
+
 	JvRect rect(_ui->x,_ui->y,
 			_ui->width,_ui->height);
 	if (_ui->y>0 && JvG::joystick->isMouseDown(rect))
 	{
-		_ui->y=0;
-		_txt->y=90;
+		_ui->y=d;
+		_txt->y=_ui->y+90;
 	}
 
-	if (_ui->y<=0)
+	if (_ui->y<=d)
 	{
 		_ui->velocity.y=0;
 		_txt->velocity.y=0;

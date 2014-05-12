@@ -13,7 +13,6 @@ JvText::JvText(double X,double Y, double Width,double Height,const char* fontnam
 	_lineHeight = 1;
 	setCollide(false);
 	_fontname = fontname; 
-
 	
 	_cclabel = CCLabelTTF::create(Text,fontname,_size);
 	_cclabel->retain();
@@ -84,7 +83,8 @@ int JvText::getLineHeight()
 void JvText::render()
 {
 	CCSize winsize = CCSizeMake(JvG::width,JvG::height);
-	_cclabel->setDimensions(CCSizeMake(width,height));
+	if( !(width==0 && height==0) )
+		_cclabel->setDimensions(CCSizeMake(width,height));
 	_cclabel->setPosition(ccp(x,winsize.height - y));
 	_cclabel->visit();
 }

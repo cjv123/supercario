@@ -325,7 +325,7 @@ void GameState::create()
 				overHeroGroup->add(qitem);
 			}
 
-			JvTextPad* txtpad = new JvTextPad(JvG::width/2-170,JvG::height/2-100-20,340,200,
+			JvTextPad* txtpad = new JvTextPad(JvG::width/2-170/2,JvG::height/2-100/2-20/2,340/2,200/2,
 				FONT_NAME,quetxt.c_str());
 			QueObj* queobj = new QueObj(x,y,txtpad,qitem);
 			add(queobj);
@@ -342,8 +342,8 @@ void GameState::create()
 	
 	char lvstr[7];
 	sprintf(lvstr,"Lv.%d",nowLv);
-	JvText* lvtxt = new JvText(3,5,50,50,FONT_NAME,lvstr);
-	lvtxt->setSize(12);
+	JvText* lvtxt = new JvText(0,0,0,0,FONT_NAME,lvstr);
+	lvtxt->setSize(10);
 	lvtxt->scrollFactor.x = lvtxt->scrollFactor.y =0;
 	add(lvtxt);
 
@@ -360,7 +360,7 @@ void GameState::create()
 	
 	add(gamePad);
 
-	JvG::playMusic("bmg.mp3",0);
+	JvG::playMusic("bgm.mp3");
 	
 	JvSprite* pauseBSp = new JvSprite;
 	JvSprite* pauseBSpH = new JvSprite;
@@ -377,11 +377,11 @@ void GameState::create()
 
 	JvSprite* spb = new JvSprite(0,0,bimg);
 	JvSprite* spbH = new JvSprite(0,0,bimgh);
-	int by = JvG::height/2 - spb->height/2;
+	int by = JvG::height/2 - spb->height/4;
 	resButton = new JvButton(0,by,spb->width,spb->height);
 	resButton->loadGraphic(spb,spbH);
 	resButton->setTitle("RESTART",FONT_NAME,0,0,12);
-	nextButton = new JvButton(100,by+100,spb->width,spb->height);
+	nextButton = new JvButton(100,by+50,spb->width,spb->height);
 	spb = new JvSprite(0,0,bimg);
 	spbH = new JvSprite(0,0,bimgh);
 	nextButton->loadGraphic(spb,spbH);
@@ -416,7 +416,7 @@ void GameState::create()
 	buttonBg->scrollFactor.y=0;
 	buttonBg->setCollide(false);
 	
-	gameoverTile = new JvText(0,30,200,30,FONT_NAME,"GAME OVER");
+	gameoverTile = new JvText(0,2,200,30,FONT_NAME,"GAME OVER");
 	gameoverTile->x = JvG::width/2 - gameoverTile->width/2;
 	gameoverTile->setSize(16);
 	gameoverTile->setColor(MAKE_RGBA_8888(255,0,0,255));
@@ -429,7 +429,7 @@ void GameState::create()
 	add(exitButton);
 	add(backButton);
 	
-	pauseTile = new JvText(0,30,200,30,FONT_NAME,"PAUSE");
+	pauseTile = new JvText(0,2,200,30,FONT_NAME,"PAUSE");
 	pauseTile->x = JvG::width/2 - pauseTile->width/2;
 	pauseTile->setSize(16);
 	pauseTile->setColor(MAKE_RGBA_8888(255,0,0,255));
@@ -452,8 +452,8 @@ void GameState::fail()
 	exitButton->visible = true;
 	buttonBg->visible = true;
 	gameoverTile->visible = true;
-	resButton->setPosition(JvG::width/2-resButton->width/2,80);
-	exitButton->setPosition(JvG::width/2-exitButton->width/2,165);
+	resButton->setPosition(JvG::width/2-resButton->width/2,40);
+	exitButton->setPosition(JvG::width/2-exitButton->width/2,82);
 	
 }
 
@@ -490,9 +490,9 @@ void GameState::pause()
 		exitButton->visible = true;
 		buttonBg->visible = true;
 		pauseTile->visible = true;
-		backButton->setPosition(JvG::width/2-resButton->width/2,75);
-		resButton->setPosition(JvG::width/2-resButton->width/2,150);
-		exitButton->setPosition(JvG::width/2-exitButton->width/2,225);
+		backButton->setPosition(JvG::width/2-resButton->width/2,JvG::height/6);
+		resButton->setPosition(JvG::width/2-resButton->width/2,JvG::height/6 + 50);
+		exitButton->setPosition(JvG::width/2-exitButton->width/2,JvG::height/6 + 100);
 	}
 	backButton->update();
 	resButton->update();

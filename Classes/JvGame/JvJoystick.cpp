@@ -22,6 +22,9 @@ JvJoystick::~JvJoystick()
 
 void JvJoystick::pressDown(KEYCODE keycode)
 {
+	if(_keyMap.find(keycode)==_keyMap.end())
+		return;
+
 	if(_keyMap[keycode] == NOPRESS)
 	{
 		_keyMap[keycode] = JUSTPRESS;
@@ -36,11 +39,16 @@ void JvJoystick::pressDown(KEYCODE keycode)
 
 void JvJoystick::pressUp(KEYCODE keycode)
 {
+	if(_keyMap.find(keycode)==_keyMap.end())
+		return;
 	_keyMap[keycode] = NOPRESS;
 }
 
 bool JvJoystick::isPress(KEYCODE keycode)
 {
+	if(_keyMap.find(keycode)==_keyMap.end())
+		return false;
+
 	if (_keyMap[keycode] == JUSTPRESS || _keyMap[keycode] == PRESS)
 	{
 		return true;
@@ -50,6 +58,9 @@ bool JvJoystick::isPress(KEYCODE keycode)
 
 bool JvJoystick::isJustPreess(KEYCODE keycode)
 {
+	if(_keyMap.find(keycode)==_keyMap.end())
+		return false;
+
 	if (_keyMap[keycode] == JUSTPRESS)
 	{
 		_keyMap[keycode] = PRESS;

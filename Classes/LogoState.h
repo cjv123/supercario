@@ -14,7 +14,6 @@ public:
 protected:
 	int _timer;
 	JvSprite* _zflogo;
-	JvSprite* _nge2logo;
 	JvText* _jvgamelogo;
 private:
 };

@@ -28,12 +28,11 @@ void CreateState::create()
 	add(startButton);
 	
 
-	JvTextPad* text = new JvTextPad(JvG::width/2-300/2,50,300,150,FONT_NAME,"                 CREATES\n\
-Game designer: Jianwei Chen\nProgrammer: Jianwei Chen\nArt: Chu He\nGame engine: JvGame\nGraphics library: Nge2\
-\nPower by ZF stdio 2012.");
-	text->setTextSize(10);
+	JvTextPad* text = new JvTextPad(JvG::width/2-160/2,10,160,90,FONT_NAME,"               CREATES\n\
+Game designer: Jianwei Chen\nProgrammer: Jianwei Chen\nArt: Chu He\nGame engine: JvGame\n\Power by ZF stdio 2012.");
+	text->setTextSize(8);
 	text->setLineHight(8);
-	text->setTextPostion(15,0);
+	//text->setTextPostion(5,0);
 	text->show();
 	add(text);
 }

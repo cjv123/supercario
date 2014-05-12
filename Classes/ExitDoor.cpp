@@ -43,7 +43,7 @@ void ExitDoor::update()
 			}
 			else
 			{
-				JvG::play("dingstone.wav",1);
+				JvG::play("ding.wav",1);
 			}
 		//}
 	}

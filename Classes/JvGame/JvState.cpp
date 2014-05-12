@@ -2,22 +2,35 @@
 #include "JvText.h"
 #include "GameState.h"
 
-JvState::JvState()
+JvState::JvState() : camera(NULL),defaultGroup(NULL)
 {
 	_bgColor =0;
+
+	if (NULL == camera)
+		camera = new JvCamera;
+
+	if (NULL == defaultGroup)
+		defaultGroup = new JvGroup;
+
 	m_ccbglayer = CCLayerColor::create();
 	m_ccbglayer->retain();
 }
 
 JvState::~JvState()
 {
+	if (camera)
+		delete camera;
+
+	if (defaultGroup)
+		delete defaultGroup;
+
 	m_ccbglayer->release();
 }
 
 void JvState::create()
 {
-	camera.init(JvG::width,JvG::height);
-	JvG::camera = &camera;
+	camera->init(JvG::width,JvG::height);
+	JvG::camera = camera;
 
 	m_ccbglayer->setContentSize(CCSizeMake(JvG::width,JvG::height));
 }
@@ -30,8 +43,8 @@ void JvState::update()
 		return;
 	}
 
-	defaultGroup.update();
-	camera.update();
+	defaultGroup->update();
+	camera->update();
 }
 
 void JvState::render()
@@ -40,18 +53,18 @@ void JvState::render()
 	{
 		m_ccbglayer->visit();
 	}
-	defaultGroup.render();
-	camera.renderFlash();
+	defaultGroup->render();
+	camera->renderFlash();
 }
 
 void JvState::collide()
 {
-	JvU::collide(&defaultGroup,&defaultGroup);
+	JvU::collide(defaultGroup,defaultGroup);
 }
 
 void JvState::add(JvObject* ObjectP)
 {
-	defaultGroup.add(ObjectP);
+	defaultGroup->add(ObjectP);
 }
 
 void JvState::setBgColor(int Color)

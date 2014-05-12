@@ -173,7 +173,7 @@ void JvTilemap::render()
 
 void JvTilemap::renderTile()
 {
-	JvRect cameraRect = JvG::stateP->camera.getCameraRect();
+	JvRect cameraRect = JvG::stateP->camera->getCameraRect();
 	int screenXInTile = (int)(cameraRect.x/_tileWidth);
 	int screenYInTile = (int)(cameraRect.y/_tileHeight);
 	int screenWInTile = JvU::ceil(JvG::width/_tileWidth);

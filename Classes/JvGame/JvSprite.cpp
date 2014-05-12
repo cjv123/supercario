@@ -147,7 +147,7 @@ CCSprite* JvSprite::getPixels()
 
 void JvSprite::renderSprite()
 {
-	JvG::stateP->camera.render(this);
+	JvG::stateP->camera->render(this);
 	//printf("rendersprite");
 }
 

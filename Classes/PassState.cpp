@@ -88,7 +88,7 @@ void PassState::create()
 	exitButton->visible = false;
 	nextButton->visible = false;
 
-	camera.flash(MAKE_RGBA_8888(255,255,255,255),1);
+	camera->flash(MAKE_RGBA_8888(255,255,255,255),1);
 	
 	
 	time = 0;

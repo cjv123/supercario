@@ -95,9 +95,9 @@ bool JvGame::update()
 		JvG::stateP = _switchState;
 		JvG::stateP->loading();
 		JvG::stateP->render();
-		JvG::stateP->defaultGroup.kill();
-		JvG::stateP->defaultGroup.exists = true;
-		JvG::stateP->defaultGroup.dead = false;
+		JvG::stateP->defaultGroup->kill();
+		JvG::stateP->defaultGroup->exists = true;
+		JvG::stateP->defaultGroup->dead = false;
 		JvG::stateP->create();
 		_switchState = NULL;
 		JvG::joystick->reSet();

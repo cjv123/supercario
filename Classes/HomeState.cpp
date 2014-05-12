@@ -25,7 +25,7 @@ void HomeState::create()
 {
 	setBgColor(MAKE_RGBA_8888(87,196,247,255));
 	JvState::create();
-	camera.flash(MAKE_RGBA_8888(255,255,255,255),1);
+	camera->flash(MAKE_RGBA_8888(255,255,255,255),1);
 	/*
 	_bgTileGroup = new JvGroup;
 	_bgTileW=50;

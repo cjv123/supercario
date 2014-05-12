@@ -27,19 +27,24 @@ void LogoState::create()
 	add(_jvgamelogo);
 	_jvgamelogo->visible = false;
 
-	JvG::save->bind("outmansave");
-	JvG::save->load(&GameState::gameData);
+	if (GameState::gameData == NULL)
+	{
+		GameState::gameData = new GameData;
+	}
+
+	JvG::save->bind("supercartiosave");
+	JvG::save->load(GameState::gameData);
 }
 
 void LogoState::update()
 {
 	if (_timer <=0)
 	{
-		camera.flash(MAKE_RGBA_8888(255,255,255,255),1);
+		camera->flash(MAKE_RGBA_8888(255,255,255,255),1);
 	}
 	else if (_timer ==3*60)
 	{
-		camera.flash(MAKE_RGBA_8888(255,255,255,255),1);
+		camera->flash(MAKE_RGBA_8888(255,255,255,255),1);
 		setBgColor(MAKE_RGBA_8888(0,0,0,255));
 		_zflogo->visible = false;
 		_nge2logo->visible = true;
@@ -52,7 +57,7 @@ void LogoState::update()
 	
 	if (_timer <=3*60 && JvG::joystick->isMouseUp())
 	{
-		camera.flash(MAKE_RGBA_8888(255,255,255,255),1);
+		camera->flash(MAKE_RGBA_8888(255,255,255,255),1);
 		setBgColor(MAKE_RGBA_8888(0,0,0,255));
 		_zflogo->visible = false;
 		_nge2logo->visible = true;

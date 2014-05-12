@@ -13,8 +13,8 @@ class JvText;
 class JvState
 {
 public:
-	JvGroup defaultGroup;
-	JvCamera camera;
+	JvGroup* defaultGroup;
+	JvCamera* camera;
 
 	JvState();
 	virtual ~JvState();

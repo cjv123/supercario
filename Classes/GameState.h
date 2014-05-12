@@ -70,7 +70,7 @@ public:
 	static JvSprite* hasKeyObj;
 	static JvSprite* hasStarObj;
 	static GamePad* gamePad;
-	static GameData gameData;
+	static GameData* gameData;
 	
 protected:
 	bool _isShowMenu;

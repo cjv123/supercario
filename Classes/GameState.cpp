@@ -35,7 +35,7 @@ bool GameState::isGetStar = false;
 JvSprite* GameState::hasKeyObj = NULL;
 JvSprite* GameState::hasStarObj = NULL;
 GamePad* GameState::gamePad = NULL;
-GameData GameState::gameData;
+GameData* GameState::gameData = NULL;
 JvButton* GameState::backButton = NULL;
 JvButton* GameState::resButton = NULL;
 JvButton* GameState::exitButton = NULL;
@@ -347,9 +347,9 @@ void GameState::create()
 	add(GameState::hasKeyObj);
 	add(GameState::hasStarObj);
 
-	camera.follow(heroP,2.6f);
-	camera.followBounds(0,0,GameState::tileMap->width,GameState::tileMap->height);
-	camera.followAdjust(0.6f,0.4f);
+	camera->follow(heroP,2.6f);
+	camera->followBounds(0,0,GameState::tileMap->width,GameState::tileMap->height);
+	camera->followAdjust(0.6f,0.4f);
 
 	
 	add(gamePad);

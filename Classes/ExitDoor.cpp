@@ -23,20 +23,20 @@ void ExitDoor::update()
 			{
 				if(GameState::nowLv<28)
 				{
-					if (GameState::gameData.level[GameState::nowLv] == LVLOCK)
+					if (GameState::gameData->level[GameState::nowLv] == LVLOCK)
 					{
-						GameState::gameData.level[GameState::nowLv] = LVOPEN;
+						GameState::gameData->level[GameState::nowLv] = LVOPEN;
 					}
 				} 
 
-				if (GameState::gameData.level[GameState::nowLv - 1]!=STARPASS)
+				if (GameState::gameData->level[GameState::nowLv - 1]!=STARPASS)
 				{
-					GameState::gameData.level[GameState::nowLv - 1] = LVPASS;
+					GameState::gameData->level[GameState::nowLv - 1] = LVPASS;
 					if (GameState::isGetStar)
 					{
-						GameState::gameData.level[GameState::nowLv - 1] = STARPASS;
+						GameState::gameData->level[GameState::nowLv - 1] = STARPASS;
 					}
-					JvG::save->save(&GameState::gameData,sizeof(GameData));
+					JvG::save->save(GameState::gameData,sizeof(GameData));
 				}
 				GameState::isGetKey = false;
 				JvG::switchState(new PassState);

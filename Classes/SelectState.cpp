@@ -24,7 +24,7 @@ void SelectState::create()
 {
 //	setBgColor(MAKE_RGBA_8888(87,196,247,255));
 	JvState::create();
-	camera.flash(MAKE_RGBA_8888(255,255,255,255),1);
+	camera->flash(MAKE_RGBA_8888(255,255,255,255),1);
 
 	_bgTileGroup = new JvGroup;
 	_bgTileW=50;
@@ -65,7 +65,7 @@ void SelectState::create()
 	add(lrBgTile);
 	add(_bgTileGroup);
 
-//	GameState::gameData.level[1] = 2;
+//	GameState::gameData->level[1] = 2;
 	
 /*
 	char titleStr[20]="Select Level";
@@ -98,9 +98,9 @@ void SelectState::create()
 		col = i % 7;
 		row = (unsigned int)(i / 7);
 
-		if (GameState::gameData.level[i]==LVOPEN ||
-			GameState::gameData.level[i]==LVPASS ||
-			GameState::gameData.level[i]==STARPASS
+		if (GameState::gameData->level[i]==LVOPEN ||
+			GameState::gameData->level[i]==LVPASS ||
+			GameState::gameData->level[i]==STARPASS
 			)
 		{
 			bImgSp = new JvSprite(0,0,bImg);
@@ -113,7 +113,7 @@ void SelectState::create()
 			add(lvButton);
 			lvButton->setCallback(selectLvButton,NULL,i+1);
 			
-			if (GameState::gameData.level[i]==LVOPEN)
+			if (GameState::gameData->level[i]==LVOPEN)
 			{
 				sprintf(str,"%d",i+1);
 				txt = new JvText(lvButton->x,lvButton->y,lvButton->width,
@@ -129,7 +129,7 @@ void SelectState::create()
 				//txt->setColor(MAKE_RGBA_8888(255,0,0,255));
 				add(txt);
 
-				if (GameState::gameData.level[i]==STARPASS)
+				if (GameState::gameData->level[i]==STARPASS)
 				{
 					JvSprite* star = new JvSprite(lvButton->x+20,lvButton->y+20);
 					star->loadGraphic("object_tile.png",true,false,16,16);
@@ -142,7 +142,7 @@ void SelectState::create()
 			}
 			
 		}
-		else if(GameState::gameData.level[i]==LVLOCK)
+		else if(GameState::gameData->level[i]==LVLOCK)
 		{
 			bImgSp = new JvSprite(0,0,bLockImg);
 			bImgSp->x = col * (lvButton->width+interval)+JvG::width/2-7*((int)lvButton->width+interval)/2;

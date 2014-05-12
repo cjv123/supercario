@@ -117,20 +117,20 @@ void GameState::create()
 	GameState::isGetKey = false;
 	GameState::isGetStar = false;
 
-	GameState::hasKeyObj = new JvSprite(JvG::width/2 - 12,8);
+	GameState::hasKeyObj = new JvSprite(JvG::width/2 - 12,4);
 	GameState::hasKeyObj->loadGraphic("haskey.png");
 	GameState::hasKeyObj->SetFixed(false);
 	GameState::hasKeyObj->scrollFactor.x = 0;
 	GameState::hasKeyObj->scrollFactor.y = 0;
-//	GameState::hasKeyObj->setScale(2);
+	GameState::hasKeyObj->setScale(0.5);
 	GameState::hasKeyObj->visible = false;
 
-	GameState::hasStarObj = new JvSprite(JvG::width/2 +22,5);
+	GameState::hasStarObj = new JvSprite(JvG::width/2 +22,2);
 	GameState::hasStarObj->loadGraphic("object_tile.png",true,false,16,16);
 	GameState::hasStarObj->SetFixed(false);
 	GameState::hasStarObj->scrollFactor.x = 0;
 	GameState::hasStarObj->scrollFactor.y = 0;
-//	GameState::hasStarObj->setScale(2);
+	GameState::hasStarObj->setScale(0.5);
 	GameState::hasStarObj->visible = false;
 	vector<int> hasStarAnim;
 	hasStarAnim.push_back(11);
@@ -343,7 +343,7 @@ void GameState::create()
 	char lvstr[7];
 	sprintf(lvstr,"Lv.%d",nowLv);
 	JvText* lvtxt = new JvText(0,0,0,0,FONT_NAME,lvstr);
-	lvtxt->setSize(10);
+	lvtxt->setSize(8);lvtxt->setColor(MAKE_RGBA_8888(0,0,0,255));
 	lvtxt->scrollFactor.x = lvtxt->scrollFactor.y =0;
 	add(lvtxt);
 

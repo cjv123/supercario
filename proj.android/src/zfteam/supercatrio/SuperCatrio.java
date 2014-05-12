@@ -73,7 +73,7 @@ public class SuperCatrio extends Cocos2dxActivity implements AdListener{
 		mAdview = new AdView(this, AdSize.BANNER, MY_AD_UNIT_ID);
 		mRl = new RelativeLayout(this);
 	    mAdview.loadAd(new AdRequest());
-	    mRl.setGravity(Gravity.BOTTOM | Gravity.CENTER_HORIZONTAL);
+	    mRl.setGravity(Gravity.TOP | Gravity.CENTER_HORIZONTAL);
 	    mRl.bringToFront();
 		mAdview.setId(5);
 		LayoutParams params = new LayoutParams(LayoutParams.MATCH_PARENT, LayoutParams.MATCH_PARENT);

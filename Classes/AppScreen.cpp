@@ -54,16 +54,11 @@ bool AppScreen::init()
 #endif
 
 	setTouchEnabled(true);
-	int sw = 480/2,sh = 320/2;
 
-	m_screen = CCRenderTexture::create(sw,sh);
-	addChild(m_screen);
-	m_screenScale = min(getContentSize().width/sw,getContentSize().height/sh);
-	m_screen->setScale(m_screenScale);
-	m_screen->setPosition(ccp(getContentSize().width/2,getContentSize().height/2));
+	m_screenScale = 1;
 
 	jvgame = new JvGame();
-	jvgame->setScreenInfo(sw,sh);
+	jvgame->setScreenInfo(getContentSize().width,getContentSize().height);
 	jvgame->setInitState(new LogoState);
 	jvgame->run();
 
@@ -81,9 +76,8 @@ CCScene* AppScreen::scene()
 void AppScreen::visit( void )
 {
 	CCLayer::visit();
-	m_screen->beginWithClear(0,0,0,0);
+
 	jvgame->update();
-	m_screen->end();
 }
 
 void AppScreen::update( float delta )

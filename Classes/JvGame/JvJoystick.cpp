@@ -72,8 +72,19 @@ bool JvJoystick::isJustPreess(KEYCODE keycode)
 void JvJoystick::mouseDown(int x, int y, int id)
 {
 	//printf("mousedown x=%d,y=%d\n",x,y);
-	int i=0;
-	for (;i<5;i++)
+
+	for (int i=0;i<5;i++)
+	{
+		if (_mousePoint[i].id == id)
+		{
+			_mousePoint[i].x = x;
+			_mousePoint[i].y = y;
+			_mousePoint[i].status = MOUSEDOWN;
+			return;
+		}
+	}
+	
+	for (int i=0;i<5;i++)
 	{
 		if (_mousePoint[i].status == MOUSENONE)
 		{
@@ -92,7 +103,7 @@ void JvJoystick::mouseUp(int x,int y, int id)
 	int i=0;
 	for (;i<5;i++)
 	{
-		if (_mousePoint[i].id == id)
+		if (_mousePoint[i].id == id || (_mousePoint[i].x == x && _mousePoint[i].y==y))
 		{
 			_mousePoint[i].x = x;
 			_mousePoint[i].y = y;
